@@ -8,14 +8,14 @@ This project demonstrates real QA/SDET work: test planning, test case design, co
 
 | Category | Status |
 |---|---|
-| **Project** | ![status](https://img.shields.io/badge/status-WIP-blue) ![portfolio](https://img.shields.io/badge/portfolio-ready--to--show-brightgreen) ![score](https://img.shields.io/badge/overall-91%2F100-brightgreen) |
-| **Manual QA** | ![coverage](https://img.shields.io/badge/coverage-100%2F100-brightgreen) ![test cases](https://img.shields.io/badge/test%20cases-181-blue) ![execution](https://img.shields.io/badge/execution-not%20started-yellow) |
-| **Playwright Setup** | ![setup](https://img.shields.io/badge/setup-100%2F100-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright-45ba4b) ![pattern](https://img.shields.io/badge/pattern-Page%20Object%20Model-blueviolet) |
-| **Automation Execution** | ![execution](https://img.shields.io/badge/execution-55%2F100-yellow) ![smoke](https://img.shields.io/badge/smoke-2%20passed-brightgreen) ![e2e](https://img.shields.io/badge/generated%20form%20E2E-1%20passed-brightgreen) ![static form](https://img.shields.io/badge/static%20form%20suite-pending-orange) |
-| **Docker** | ![docker](https://img.shields.io/badge/docker-100%2F100-brightgreen) ![compose](https://img.shields.io/badge/compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
-| **SureForms Business** | ![business](https://img.shields.io/badge/business%20coverage-100%2F100-brightgreen) ![automation](https://img.shields.io/badge/business%20automation-planned-yellow) |
-| **GitHub Readiness** | ![readiness](https://img.shields.io/badge/readiness-90%2F100-brightgreen) ![docs](https://img.shields.io/badge/docs-polished-brightgreen) ![ci](https://img.shields.io/badge/CI-planned-yellow) |
-| **Latest Verified Build** | ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![playwright](https://img.shields.io/badge/Playwright-1.59.1-blue) |
+| **📌 Project** | ![status](https://img.shields.io/badge/status-WIP-blue) ![portfolio](https://img.shields.io/badge/portfolio-ready--to--show-brightgreen) ![score](https://img.shields.io/badge/overall-91%2F100-brightgreen) |
+| **🧪 Manual QA** | ![coverage](https://img.shields.io/badge/coverage-100%2F100-brightgreen) ![test cases](https://img.shields.io/badge/test%20cases-181-blue) ![execution](https://img.shields.io/badge/execution-not%20started-yellow) |
+| **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-100%2F100-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright-45ba4b) ![pattern](https://img.shields.io/badge/pattern-Page%20Object%20Model-blueviolet) |
+| **⚡ Automation Execution** | ![execution](https://img.shields.io/badge/execution-55%2F100-yellow) ![smoke](https://img.shields.io/badge/smoke-2%20passed-brightgreen) ![e2e](https://img.shields.io/badge/generated%20form%20E2E-1%20passed-brightgreen) ![static form](https://img.shields.io/badge/static%20form%20suite-pending-orange) |
+| **🐳 Docker** | ![docker](https://img.shields.io/badge/docker-100%2F100-brightgreen) ![compose](https://img.shields.io/badge/compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
+| **💼 SureForms Business** | ![business](https://img.shields.io/badge/business%20coverage-100%2F100-brightgreen) ![automation](https://img.shields.io/badge/business%20automation-planned-yellow) |
+| **🌐 GitHub Readiness** | ![readiness](https://img.shields.io/badge/readiness-90%2F100-brightgreen) ![docs](https://img.shields.io/badge/docs-polished-brightgreen) ![ci](https://img.shields.io/badge/CI-planned-yellow) |
+| **✅ Latest Verified Build** | ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![playwright](https://img.shields.io/badge/Playwright-1.59.1-blue) |
 
 > **Current truth:** Playwright setup and Docker readiness are complete. Automation execution is improving, but it is not 100/100 yet because the static `/qa-test-form/` suite, Business automation, accessibility checks, and backend verification are still pending.
 
@@ -160,102 +160,57 @@ automation/
 
 ## 🪜 Suggested Review Flow
 
-### 1. Start With Project Status
-
 ```text
-PROJECT_STATUS_AND_NEXT_PLAN.md
-README.md
+Review path/
+├── 1️⃣ Project status
+│   ├── README.md
+│   │   └── Portfolio overview, setup commands, scores, and execution paths
+│   └── PROJECT_STATUS_AND_NEXT_PLAN.md
+│       └── Current score, remaining issues, and next execution plan
+│
+├── 2️⃣ Manual QA coverage
+│   └── manual-testing/
+│       ├── TestPlan.md
+│       ├── TestCases.csv / TestCases.xlsx
+│       ├── TestCoverage.md
+│       ├── BusinessCoverage.md
+│       ├── ManualCoverageMatrix.md
+│       ├── ManualExecutionReport.md
+│       ├── QASignoffChecklist.md
+│       ├── BugReports.md
+│       └── Screenshots/
+│
+├── 3️⃣ Automation design
+│   └── automation/
+│       ├── fixtures/testData.js
+│       ├── pages/formPage.js
+│       ├── pages/sureformsAdminPage.js
+│       ├── tests/smoke.spec.js
+│       ├── tests/createFormE2E.spec.js
+│       ├── tests/form.spec.js
+│       ├── tests/interactive-summary.spec.js
+│       └── utils/env.js
+│
+├── 4️⃣ Automation status docs
+│   └── automation/
+│       ├── AutomationCoverage.md
+│       ├── AutomationExecutionWorkArea.md
+│       ├── AutomationStatus.md
+│       ├── PlaywrightSetupChecklist.md
+│       └── WordPressPlaywrightSetup.md
+│
+├── 5️⃣ Docker setup
+│   ├── docker-compose.yml
+│   └── automation/
+│       ├── Dockerfile
+│       ├── DockerStatus.md
+│       └── DockerReadinessChecklist.md
+│
+└── 6️⃣ Command verification
+    └── npm run test:smoke, test:create-form, docker:smoke
 ```
 
-- `README.md` gives the portfolio overview, setup commands, scores, and execution paths.
-- `PROJECT_STATUS_AND_NEXT_PLAN.md` tracks the current score, remaining issues, and next execution plan.
-
-### 2. Review Manual QA Coverage
-
-```text
-manual-testing/
-  TestPlan.md
-  TestCases.csv
-  TestCases.xlsx
-  TestCoverage.md
-  BusinessCoverage.md
-  ManualCoverageMatrix.md
-  ManualExecutionReport.md
-  QASignoffChecklist.md
-  BugReports.md
-  Screenshots/
-```
-
-- `TestPlan.md` defines scope, entry/exit criteria, environment, and testing approach.
-- `TestCases.csv` and `TestCases.xlsx` contain the full manual QA suite.
-- `ManualCoverageMatrix.md` explains why manual coverage is scored 100/100.
-- `ManualExecutionReport.md` tracks pass/fail/blocked/not-run execution progress.
-- `QASignoffChecklist.md` separates coverage signoff from execution signoff.
-- `BusinessCoverage.md` maps SureForms Business scenarios.
-- `BugReports.md` stores defect templates and real bugs.
-- `Screenshots/` is reserved for bug evidence and execution proof.
-
-### 3. Review Automation Design
-
-```text
-automation/
-  fixtures/
-    testData.js
-  pages/
-    formPage.js
-    sureformsAdminPage.js
-  tests/
-    smoke.spec.js
-    form.spec.js
-    createFormE2E.spec.js
-    interactive-summary.spec.js
-  utils/
-    env.js
-```
-
-- `fixtures/testData.js` stores reusable submission data.
-- `pages/formPage.js` handles frontend form actions and assertions.
-- `pages/sureformsAdminPage.js` handles WordPress login and SureForms admin form generation.
-- `tests/smoke.spec.js` verifies the local WordPress site and automation environment.
-- `tests/createFormE2E.spec.js` runs the passing end-to-end generated form flow.
-- `tests/form.spec.js` targets the static `/qa-test-form/` page once it exists.
-- `tests/interactive-summary.spec.js` runs a headed Chromium demo with a custom HTML summary.
-- `utils/env.js` loads `.env` values and shared runtime config.
-
-### 4. Check Automation Status Docs
-
-```text
-automation/
-  AutomationCoverage.md
-  AutomationExecutionWorkArea.md
-  AutomationStatus.md
-  PlaywrightSetupChecklist.md
-  WordPressPlaywrightSetup.md
-```
-
-- `AutomationCoverage.md` explains current and planned automation phases.
-- `AutomationExecutionWorkArea.md` tracks execution blockers and improvement path.
-- `AutomationStatus.md` records latest pass/fail automation results.
-- `PlaywrightSetupChecklist.md` shows why Playwright setup is 100/100.
-- `WordPressPlaywrightSetup.md` explains WordPress-specific Playwright options.
-
-### 5. Check Docker Setup
-
-```text
-automation/
-  Dockerfile
-  DockerStatus.md
-  DockerReadinessChecklist.md
-
-docker-compose.yml
-```
-
-- `Dockerfile` builds the Playwright runner image.
-- `docker-compose.yml` connects the Playwright container to the LocalWP site.
-- `DockerStatus.md` records verified Docker commands and versions.
-- `DockerReadinessChecklist.md` shows why Docker readiness is 100/100.
-
-### 6. Run The Main Commands
+Quick command check:
 
 ```bash
 cd automation
@@ -276,41 +231,96 @@ docker:smoke     2 passed
 
 Manual QA documents live in `manual-testing/`:
 
-- `TestPlan.md`
-- `TestCases.csv`
-- `TestCases.xlsx`
-- `TestCoverage.md`
-- `BusinessCoverage.md`
-- `ManualCoverageMatrix.md`
-- `ManualExecutionReport.md`
-- `QASignoffChecklist.md`
-- `BugReports.md`
-- `Screenshots/`
+```text
+manual-testing/
+├── 📋 TestPlan.md
+│   └── Scope, objectives, entry/exit criteria, risks, and QA approach
+│
+├── ✅ TestCases.csv
+│   └── 181 executable manual test cases for functional, UI, validation, edge, and Business flows
+│
+├── 📊 TestCases.xlsx
+│   └── Spreadsheet version for filtering, review, and portfolio presentation
+│
+├── 🧭 TestCoverage.md
+│   └── Feature-to-test coverage summary
+│
+├── 💼 BusinessCoverage.md
+│   └── SureForms Business and advanced feature coverage
+│
+├── 🎯 ManualCoverageMatrix.md
+│   └── 100/100 planning and traceability evidence
+│
+├── 🧾 ManualExecutionReport.md
+│   └── Pass/fail/blocked/not-run execution tracker
+│
+├── 🏁 QASignoffChecklist.md
+│   └── Coverage signoff and execution readiness separation
+│
+├── 🐞 BugReports.md
+│   └── Defect format, examples, severity, expected vs actual results
+│
+└── 📸 Screenshots/
+    └── Bug proof, UI proof, execution proof, and GitHub-ready evidence
+```
+
+| QA Area | Coverage Proof | Status |
+|---|---|---|
+| **📋 Planning** | `TestPlan.md` | Complete |
+| **✅ Test inventory** | `TestCases.csv`, `TestCases.xlsx` | 181 cases |
+| **🎯 Traceability** | `ManualCoverageMatrix.md`, `TestCoverage.md` | 100/100 |
+| **💼 Business coverage** | `BusinessCoverage.md` | 100/100 |
+| **🧾 Execution tracking** | `ManualExecutionReport.md`, `QASignoffChecklist.md` | Ready |
+| **🐞 Defect handling** | `BugReports.md`, `Screenshots/` | Template ready |
 
 Manual coverage is **100/100** for planning and traceability. Execution status is tracked separately so the project stays honest and professional.
 
 ## 🤖 Automation Coverage
 
-Implemented automation:
+```text
+automation coverage/
+├── ✅ Implemented
+│   ├── Local WordPress smoke check
+│   ├── Automation environment validation
+│   ├── Generated SureForms contact form E2E
+│   ├── Frontend form page object
+│   ├── SureForms admin page object
+│   ├── Interactive headed Chromium demo with custom result summary
+│   └── Dockerized Playwright smoke path
+│
+├── ⏳ Pending execution
+│   ├── Static /qa-test-form/ suite after the page is created
+│   ├── Missing-name validation
+│   ├── Missing-email validation
+│   ├── Missing-message validation
+│   └── Invalid email format validation
+│
+├── 💼 Business automation planned
+│   ├── Business/pro field checks
+│   ├── Conditional logic
+│   ├── Multi-step forms
+│   ├── Conversational forms
+│   ├── Calculations and quiz flows
+│   ├── Webhook/integration checks
+│   └── PayPal/payment path checks
+│
+└── 🚀 Future quality gates
+    ├── Entries and backend verification
+    ├── Email notification verification
+    ├── Accessibility checks
+    ├── Visual checks
+    └── GitHub Actions smoke workflow
+```
 
-- Local WordPress smoke check
-- Automation environment validation
-- Generated SureForms contact form E2E
-- Frontend form page object
-- SureForms admin page object
-- Interactive headed Chromium demo with custom result summary
-- Dockerized Playwright smoke path
-
-Planned automation:
-
-- Static `/qa-test-form/` suite once the page exists
-- Missing-name / missing-email / missing-message validations
-- Business field automation
-- Conditional logic automation
-- Multi-step form automation
-- Entries and backend verification
-- Accessibility checks
-- GitHub Actions smoke workflow
+| Automation Area | Current State | Evidence |
+|---|---|---|
+| **✅ Smoke** | Passing | `tests/smoke.spec.js` |
+| **✅ Generated form E2E** | Passing | `tests/createFormE2E.spec.js` |
+| **✅ Page objects** | Implemented | `pages/formPage.js`, `pages/sureformsAdminPage.js` |
+| **✅ Test data** | Reusable | `fixtures/testData.js` |
+| **✅ Docker smoke** | Passing | `DockerStatus.md` |
+| **⏳ Static form suite** | Pending WordPress page | `tests/form.spec.js` |
+| **⏳ Business automation** | Planned | `AutomationCoverage.md` |
 
 ## ⚙️ Automation Setup
 
@@ -397,24 +407,53 @@ Fallback without global npm:
 
 The manual suite currently targets **181 test cases** across:
 
-- WordPress and plugin setup
-- SureForms form builder
-- AI form generation
-- WordPress page embedding
-- Frontend UI checks
-- Functional form submission
-- Required field and email validation
-- Boundary and edge cases
-- Security-negative exploratory checks
-- Responsive layout checks
-- Accessibility checks
-- Submission data verification
-- Email notification checks
-- Performance and reliability checks
-- Regression checks
-- SureForms Business activation and dependency checks
-- Business/pro field coverage
-- Multi-step, conversational, conditional logic, calculation, quiz, webhook, PayPal, and integration coverage
+```text
+coverage highlights/
+├── 🧱 Setup and configuration
+│   ├── WordPress local site readiness
+│   ├── SureForms plugin activation
+│   ├── SureForms Business activation
+│   └── Dependency and compatibility checks
+│
+├── 🛠️ Form builder coverage
+│   ├── Form creation
+│   ├── AI prompt-based form generation
+│   ├── Field add/edit/remove behavior
+│   ├── WordPress page embedding
+│   └── Publish and preview behavior
+│
+├── 🧾 Frontend submission coverage
+│   ├── Valid contact form submission
+│   ├── Required field validation
+│   ├── Email format validation
+│   ├── Boundary and long input checks
+│   ├── Special character checks
+│   └── Rapid multiple submission checks
+│
+├── 🎨 UI and UX coverage
+│   ├── Field alignment
+│   ├── Button visibility
+│   ├── Responsive layout checks
+│   ├── Accessibility checks
+│   └── Visual consistency checks
+│
+├── 🔐 Reliability and negative coverage
+│   ├── Security-negative exploratory checks
+│   ├── Submission data verification
+│   ├── Email notification checks
+│   ├── Performance checks
+│   └── Regression checks
+│
+└── 💼 SureForms Business coverage
+    ├── Business/pro fields
+    ├── Multi-step forms
+    ├── Conversational forms
+    ├── Conditional logic
+    ├── Calculation forms
+    ├── Quiz flows
+    ├── Webhooks and integrations
+    └── PayPal/payment path coverage
+```
 
 ## 📌 Key Documents
 
