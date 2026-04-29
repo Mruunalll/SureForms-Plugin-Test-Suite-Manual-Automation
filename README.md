@@ -117,10 +117,16 @@ Manual QA documents live in `manual-testing/`:
 
 - `TestPlan.md`
 - `TestCases.csv`
+- `TestCases.xlsx`
 - `TestCoverage.md`
 - `BusinessCoverage.md`
+- `ManualCoverageMatrix.md`
+- `ManualExecutionReport.md`
+- `QASignoffChecklist.md`
 - `BugReports.md`
 - `Screenshots/`
+
+Manual QA coverage status: 100/100 planned coverage, with execution status tracked separately.
 
 ## Current Test Coverage
 

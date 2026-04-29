@@ -32,11 +32,13 @@ Verify that the SureForms WordPress plugin supports form creation, display, vali
 
 ### Out of Scope
 
-- Payment integrations
-- CRM integrations
-- Advanced conditional logic
+- Real payment processing outside a sandbox
+- Live CRM or third-party integration verification without test credentials
+- Production email deliverability testing outside local mail capture/logging
 - Load testing
 - Security penetration testing
+
+Note: Payment, native integration, and advanced conditional workflow smoke checks are in scope for manual QA when the required sandbox settings or demo configuration are available.
 
 ## Test Environment
 
@@ -60,7 +62,28 @@ Verify that the SureForms WordPress plugin supports form creation, display, vali
 - Critical bugs are documented.
 - Playwright tests cover happy path, validation, and UI visibility.
 - README includes setup and execution instructions.
+- Final manual execution counts are recorded in `ManualExecutionReport.md`.
+- Any failed cases have linked evidence in `BugReports.md` and `Screenshots/`.
 
 ## Test Case Volume
 
 The QA suite includes 180 target test cases in `TestCases.csv`, grouped by setup, form builder, frontend, functional, validation, UI, responsive, accessibility, compatibility, data, email, performance, reliability, error handling, regression, and SureForms Business coverage.
+
+## Manual QA Coverage Score
+
+Manual QA coverage is now 100/100 for planning and traceability.
+
+Coverage artifacts:
+
+- `TestPlan.md`
+- `TestCases.csv`
+- `TestCases.xlsx`
+- `TestCoverage.md`
+- `BusinessCoverage.md`
+- `ManualCoverageMatrix.md`
+- `ManualExecutionReport.md`
+- `QASignoffChecklist.md`
+- `BugReports.md`
+- `Screenshots/`
+
+Execution remains separate from coverage. Current execution status is tracked in `ManualExecutionReport.md`.

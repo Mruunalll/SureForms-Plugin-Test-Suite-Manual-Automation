@@ -8,6 +8,9 @@ Document real issues found during manual or automation testing.
 **Severity:**  
 **Priority:**  
 **Status:**  
+**Reported By:**
+**Reported Date:**
+**Build/Version:**
 
 ### Environment
 
@@ -15,6 +18,7 @@ Document real issues found during manual or automation testing.
 - Browser:
 - WordPress:
 - Plugin:
+- Theme:
 
 ### Steps to Reproduce
 
@@ -31,6 +35,30 @@ Document real issues found during manual or automation testing.
 ### Screenshot
 
 Add screenshot under `manual-testing/Screenshots/`.
+
+### Notes
+
+- Related Test Case ID:
+- Reproducibility:
+- Workaround:
+
+## Severity Guide
+
+| Severity | Meaning |
+|---|---|
+| Critical | Blocks form creation, site access, or all submissions |
+| High | Breaks a primary workflow such as required validation or successful submission |
+| Medium | Impacts important behavior but has a workaround |
+| Low | Cosmetic, wording, or minor usability issue |
+
+## Priority Guide
+
+| Priority | Meaning |
+|---|---|
+| P0 | Must fix before execution can continue |
+| P1 | Should fix before final QA signoff |
+| P2 | Fix when practical |
+| P3 | Nice-to-have improvement |
 
 ## Sample Bug
 
@@ -52,4 +80,3 @@ Required email validation should appear.
 ### Actual Result
 
 Form submitted successfully.
-
