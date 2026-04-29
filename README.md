@@ -75,6 +75,91 @@ The generated SureForms E2E test verifies:
 
 Use the repo in this order:
 
+```text
+sureforms-qa-testing/
+├── 📘 README.md                         # Portfolio overview, scores, setup, commands
+├── 📊 PROJECT_STATUS_AND_NEXT_PLAN.md    # Current score, blockers, next phases
+├── 🐳 docker-compose.yml                 # Docker runner for Playwright
+│
+├── 🧪 manual-testing/                    # Manual QA deliverables
+│   ├── TestPlan.md                       # Scope, approach, entry/exit criteria
+│   ├── TestCases.csv                     # 181 manual test cases
+│   ├── TestCases.xlsx                    # Spreadsheet version of test cases
+│   ├── TestCoverage.md                   # Coverage map
+│   ├── BusinessCoverage.md               # SureForms Business coverage
+│   ├── ManualCoverageMatrix.md           # 100/100 manual coverage evidence
+│   ├── ManualExecutionReport.md          # Pass/fail/blocked/not-run tracking
+│   ├── QASignoffChecklist.md             # Coverage vs execution signoff
+│   ├── BugReports.md                     # Defect template and examples
+│   └── Screenshots/                      # Bug and execution evidence
+│
+└── 🤖 automation/                         # Playwright automation suite
+    ├── fixtures/
+    │   └── testData.js                   # Reusable form submission data
+    ├── pages/
+    │   ├── formPage.js                   # Frontend form page object
+    │   └── sureformsAdminPage.js         # WordPress/SureForms admin page object
+    ├── tests/
+    │   ├── smoke.spec.js                 # Local WordPress smoke checks
+    │   ├── form.spec.js                  # Static /qa-test-form/ suite
+    │   ├── createFormE2E.spec.js         # Passing generated-form E2E
+    │   └── interactive-summary.spec.js   # Headed demo with result summary tab
+    ├── utils/
+    │   └── env.js                        # Environment/config loader
+    ├── .env.example                      # Local env template
+    ├── playwright.config.js              # Playwright projects/reporting/artifacts
+    ├── package.json                      # npm test scripts
+    ├── Dockerfile                        # Playwright Docker image
+    ├── README.md                         # Automation-specific instructions
+    ├── AutomationCoverage.md             # Automation roadmap
+    ├── AutomationExecutionWorkArea.md    # Execution score and blockers
+    ├── AutomationStatus.md               # Latest automation results
+    ├── PlaywrightSetupChecklist.md       # 100/100 setup evidence
+    ├── DockerStatus.md                   # Docker verification results
+    ├── DockerReadinessChecklist.md       # 100/100 Docker evidence
+    └── WordPressPlaywrightSetup.md       # WordPress Playwright notes
+```
+
+## 🗂️ Artifact Map
+
+| Area | Main Artifacts | Purpose |
+|---|---|---|
+| **Project status** | `README.md`, `PROJECT_STATUS_AND_NEXT_PLAN.md` | Portfolio overview, current score, blockers, next plan |
+| **Manual QA** | `TestPlan.md`, `TestCases.csv`, `TestCases.xlsx` | Manual planning and executable test inventory |
+| **Coverage proof** | `ManualCoverageMatrix.md`, `TestCoverage.md`, `BusinessCoverage.md` | Evidence for 100/100 manual and Business coverage |
+| **Execution tracking** | `ManualExecutionReport.md`, `AutomationStatus.md`, `AutomationExecutionWorkArea.md` | Pass/fail/blocked/not-run status and automation progress |
+| **Bug evidence** | `BugReports.md`, `Screenshots/` | Defect reporting and visual proof |
+| **Automation code** | `tests/`, `pages/`, `fixtures/`, `utils/` | Playwright tests, page objects, data, and config helpers |
+| **Tooling proof** | `PlaywrightSetupChecklist.md`, `DockerReadinessChecklist.md`, `DockerStatus.md` | Setup/readiness scoring and command verification |
+| **WordPress strategy** | `WordPressPlaywrightSetup.md` | Notes for WordPress-specific Playwright/admin/editor automation |
+
+## 🧭 Automation Entry Points
+
+```text
+automation/
+├── ✅ smoke.spec.js
+│   └── npm run test:smoke
+│       Verifies environment config and LocalWP homepage.
+│
+├── ✅ createFormE2E.spec.js
+│   └── npm run test:create-form
+│       Logs in, generates a SureForms form, publishes it, submits it, and checks thank-you text.
+│
+├── ⏳ form.spec.js
+│   └── npm run test:form
+│       Targets /qa-test-form/. Pending until that static page exists.
+│
+├── 👀 interactive-summary.spec.js
+│   └── npm run test:interactive
+│       Opens headed Chromium and shows a custom HTML result summary.
+│
+└── 🐳 Docker smoke
+    └── npm run docker:smoke
+        Runs the smoke path inside the Playwright Docker container.
+```
+
+## 🪜 Suggested Review Flow
+
 ### 1. Start With Project Status
 
 ```text
@@ -185,52 +270,6 @@ Expected currently:
 test:smoke        2 passed
 test:create-form 1 passed
 docker:smoke     2 passed
-```
-
-Full tree:
-
-```text
-manual-testing/
-  TestPlan.md
-  TestCases.csv
-  TestCases.xlsx
-  TestCoverage.md
-  BusinessCoverage.md
-  ManualCoverageMatrix.md
-  ManualExecutionReport.md
-  QASignoffChecklist.md
-  BugReports.md
-  Screenshots/
-
-automation/
-  fixtures/
-    testData.js
-  pages/
-    formPage.js
-    sureformsAdminPage.js
-  tests/
-    smoke.spec.js
-    form.spec.js
-    createFormE2E.spec.js
-    interactive-summary.spec.js
-  utils/
-    env.js
-  .env.example
-  AutomationCoverage.md
-  AutomationExecutionWorkArea.md
-  AutomationStatus.md
-  DockerStatus.md
-  DockerReadinessChecklist.md
-  PlaywrightSetupChecklist.md
-  WordPressPlaywrightSetup.md
-  README.md
-  Dockerfile
-  playwright.config.js
-  package.json
-
-docker-compose.yml
-PROJECT_STATUS_AND_NEXT_PLAN.md
-README.md
 ```
 
 ## 🧪 Manual QA Artifacts
