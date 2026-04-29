@@ -6,6 +6,8 @@ Last updated: 2026-04-29
 
 The repository is ready to be shared as a WIP QA portfolio project. It already includes manual QA artifacts, Playwright automation structure, Docker support, and GitHub documentation.
 
+Current recommendation: publish as WIP and continue execution. The project is professionally structured, but it should not be presented as execution-complete until the SureForms QA form page exists and the manual/automation execution evidence is updated.
+
 ## Testing Score
 
 | Area | Score | Status |
@@ -20,18 +22,26 @@ The repository is ready to be shared as a WIP QA portfolio project. It already i
 
 Overall testing project score: 88/100 WIP
 
+## Score Summary
+
+| Score Type | Current Score | Meaning |
+|---|---:|---|
+| Planning and structure score | 100/100 | Manual coverage, Playwright setup, Docker readiness, and documentation structure are complete |
+| Execution score | 35/100 | Only smoke tests are verified; form, Business, manual execution, and backend checks are still pending |
+| Portfolio readiness score | 88/100 | Strong WIP project ready to show with clearly documented blockers |
+
 ## Latest Verified Automation Result
 
 Command run from `automation/`:
 
 ```bash
-../.tools/bin/npm test -- tests/smoke.spec.js --project=chromium
+../.tools/bin/npm run test:smoke
 ```
 
 Result:
 
 ```text
-1 passed
+2 passed
 ```
 
 Verified coverage:
@@ -39,6 +49,18 @@ Verified coverage:
 - Chromium launches successfully.
 - Local WordPress homepage opens successfully.
 - Basic site smoke check passes.
+- Automation environment values are configured.
+
+## Latest Verified Docker Result
+
+Commands verified:
+
+```text
+docker compose config --quiet: passed
+../.tools/bin/npm run docker:build: passed
+../.tools/bin/npm run docker:doctor: Playwright 1.59.1
+../.tools/bin/npm run docker:smoke: 2 passed
+```
 
 ## Remaining Issues
 
@@ -54,6 +76,19 @@ Verified coverage:
 | P2 | Accessibility automation is not added | A11y score is manual only | Add axe-based checks later |
 | P2 | CI is not configured | GitHub cannot run tests automatically | Add GitHub Actions after local tests are stable |
 
+## Immediate Next Actions
+
+| Order | Action | Owner Area | Expected Result |
+|---:|---|---|---|
+| 1 | Create `QA Test Form` in SureForms | WordPress admin | Form exists with Name, Email, Phone, and Message fields |
+| 2 | Publish `/qa-test-form/` page | WordPress page | Automation target URL returns the actual SureForms form instead of 404 |
+| 3 | Inspect rendered field HTML | QA automation | Confirm stable selectors for page object |
+| 4 | Update `automation/pages/formPage.js` if needed | Playwright | Form tests use reliable SureForms locators |
+| 5 | Run `../.tools/bin/npm test` | Playwright | Full automation result is known |
+| 6 | Execute P0/P1 manual cases | Manual QA | Execution evidence starts moving from Not Run to Pass/Fail/Blocked |
+| 7 | Capture screenshots and real bugs | Manual QA | Portfolio has visible evidence, not only planned coverage |
+| 8 | Add CI after local suite is stable | GitHub Actions | Repo can run smoke checks automatically |
+
 ## Next Plan
 
 ### Phase 1: Unblock Core Automation
@@ -67,7 +102,7 @@ Verified coverage:
 7. Update `automation/pages/formPage.js` with stable selectors from the real form.
 8. Run the full Playwright suite.
 
-Target score after this phase: 86/100
+Target score after this phase: 91/100
 
 ### Phase 2: Strengthen Manual QA Evidence
 
@@ -77,7 +112,7 @@ Target score after this phase: 86/100
 4. Expand `manual-testing/BugReports.md` with real defects found during execution.
 5. Add a short execution summary with total passed, failed, blocked, and not run counts.
 
-Target score after this phase: 90/100
+Target score after this phase: 93/100
 
 ### Phase 3: Add SureForms Business Automation
 
@@ -87,7 +122,7 @@ Target score after this phase: 90/100
 4. Add conditional logic show/hide tests.
 5. Add validation checks for visible and hidden conditional fields.
 
-Target score after this phase: 94/100
+Target score after this phase: 96/100
 
 ### Phase 4: Portfolio Polish
 
@@ -97,7 +132,7 @@ Target score after this phase: 94/100
 4. Add badges to `README.md` after CI is configured.
 5. Add a release-style project summary with completed coverage and known gaps.
 
-Target score after this phase: 96/100
+Target score after this phase: 98/100
 
 ## Recommended GitHub WIP Note
 
