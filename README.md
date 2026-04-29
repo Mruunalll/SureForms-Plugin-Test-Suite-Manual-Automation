@@ -32,6 +32,7 @@ automation/
   AutomationCoverage.md
   AutomationStatus.md
   DockerStatus.md
+  DockerReadinessChecklist.md
   PlaywrightSetupChecklist.md
   README.md
   Dockerfile
@@ -124,6 +125,8 @@ From `automation/`:
 
 ```bash
 npm run docker:build
+npm run docker:doctor
+npm run docker:smoke
 npm run docker:test
 ```
 
@@ -131,6 +134,8 @@ Fallback without global npm:
 
 ```bash
 ../.tools/bin/npm run docker:build
+../.tools/bin/npm run docker:doctor
+../.tools/bin/npm run docker:smoke
 ../.tools/bin/npm run docker:test
 ```
 
@@ -178,6 +183,10 @@ Automation coverage is tracked in `automation/AutomationCoverage.md`.
 Current automation run status is tracked in `automation/AutomationStatus.md`.
 
 Docker setup status is tracked in `automation/DockerStatus.md`.
+
+Docker readiness status is tracked in `automation/DockerReadinessChecklist.md`.
+
+Docker readiness status: 100/100. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
 
 Playwright setup status is tracked in `automation/PlaywrightSetupChecklist.md`.
 

@@ -16,6 +16,8 @@
     "doctor": "playwright --version",
     "install:browsers": "playwright install",
     "docker:test": "docker compose -f ../docker-compose.yml run --rm playwright",
+    "docker:smoke": "docker compose -f ../docker-compose.yml run --rm playwright npm run test:smoke",
+    "docker:doctor": "docker compose -f ../docker-compose.yml run --rm playwright npm run doctor",
     "docker:build": "docker compose -f ../docker-compose.yml build playwright"
   },
   "devDependencies": {

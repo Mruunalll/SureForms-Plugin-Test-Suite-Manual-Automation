@@ -56,6 +56,8 @@ From `automation/`:
 
 ```bash
 npm run docker:build
+npm run docker:doctor
+npm run docker:smoke
 npm run docker:test
 ```
 

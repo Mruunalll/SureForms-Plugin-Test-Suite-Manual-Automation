@@ -6,10 +6,16 @@ services:
     environment:
       BASE_URL: ${BASE_URL:-http://surefroms.test}
       FORM_PATH: ${FORM_PATH:-/qa-test-form/}
+      WP_ADMIN_PATH: ${WP_ADMIN_PATH:-/wp-admin/}
+      HEADLESS: ${HEADLESS:-true}
+      PW_RETRIES: ${PW_RETRIES:-0}
+      PW_WORKERS: ${PW_WORKERS:-1}
+      PW_TRACE: ${PW_TRACE:-on-first-retry}
+      PW_VIDEO: ${PW_VIDEO:-retain-on-failure}
+      PW_SCREENSHOT: ${PW_SCREENSHOT:-only-on-failure}
       CI: "true"
     extra_hosts:
       - "surefroms.test:host-gateway"
     volumes:
       - ./automation/test-results:/app/test-results
       - ./automation/playwright-report:/app/playwright-report
-

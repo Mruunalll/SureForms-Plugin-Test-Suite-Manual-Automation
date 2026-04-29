@@ -14,11 +14,11 @@ The repository is ready to be shared as a WIP QA portfolio project. It already i
 | Manual QA coverage | 100/100 | 180 planned test cases plus traceability, execution report, signoff checklist, defect process, evidence plan, and Business coverage |
 | Playwright setup | 100/100 | Framework, config, scripts, reports, artifacts, env template, helpers, page object, test data, headed demo, and Docker path are complete |
 | Automation execution | 35/100 | Basic smoke test passes, but form automation is blocked until the QA form page exists |
-| Docker readiness | 85/100 | Docker image builds and can reach the local WordPress site |
+| Docker readiness | 100/100 | Dockerfile, Compose service, host mapping, report volumes, env passthrough, build/test/doctor/smoke commands, and readiness checklist are complete |
 | SureForms Business manual coverage | 100/100 | Business setup, fields, workflows, integrations, payments, entries, accessibility, responsive, and regression scenarios are documented |
 | GitHub portfolio readiness | 80/100 | Good to publish as WIP with clear blockers and next steps |
 
-Overall testing project score: 85/100 WIP
+Overall testing project score: 88/100 WIP
 
 ## Latest Verified Automation Result
 
