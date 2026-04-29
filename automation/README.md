@@ -93,3 +93,5 @@ Playwright stores:
 ## Current Limitation
 
 The Playwright setup is complete. Full form tests require the WordPress page `/qa-test-form/` to exist and contain the expected SureForms fields.
+
+WordPress-specific Playwright helper options are documented in `WordPressPlaywrightSetup.md`.

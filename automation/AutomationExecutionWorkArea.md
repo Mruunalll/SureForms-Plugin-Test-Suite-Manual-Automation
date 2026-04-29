@@ -71,6 +71,7 @@ The failures happen because `/qa-test-form/` returns a WordPress 404 page. Becau
 | P1 | Update `pages/formPage.js` selectors if needed | Pending | Locators match SureForms markup |
 | P1 | Run `npm run test:form` | Pending | Desktop and mobile form tests have real results |
 | P1 | Record execution outcome in `AutomationStatus.md` | Pending | Automation score can be updated |
+| P2 | Add WordPress Playwright utilities | Pending | `@wordpress/e2e-test-utils-playwright` supports admin/editor/REST automation |
 | P2 | Add more automation scenarios | Pending | Missing-name, missing-email, edge input, responsive, accessibility |
 | P2 | Add GitHub Actions smoke workflow | Pending | GitHub portfolio readiness improves after local execution is stable |
 
@@ -103,3 +104,5 @@ After publishing the page, rerun:
 cd automation
 ../.tools/bin/npm run test:form
 ```
+
+WordPress-specific Playwright setup notes are tracked in `WordPressPlaywrightSetup.md`.

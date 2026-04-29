@@ -35,6 +35,7 @@ automation/
   DockerStatus.md
   DockerReadinessChecklist.md
   PlaywrightSetupChecklist.md
+  WordPressPlaywrightSetup.md
   README.md
   Dockerfile
   playwright.config.js
@@ -192,6 +193,8 @@ Docker readiness status is tracked in `automation/DockerReadinessChecklist.md`.
 Docker readiness status: 100/100. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
 
 Playwright setup status is tracked in `automation/PlaywrightSetupChecklist.md`.
+
+WordPress-specific Playwright setup notes are tracked in `automation/WordPressPlaywrightSetup.md`.
 
 Playwright setup status: 100/100. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
 
