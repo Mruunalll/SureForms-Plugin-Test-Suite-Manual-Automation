@@ -71,6 +71,122 @@ The generated SureForms E2E test verifies:
 
 ## 📂 Project Structure
 
+Use the repo in this order:
+
+### 1. Start With Project Status
+
+```text
+PROJECT_STATUS_AND_NEXT_PLAN.md
+README.md
+```
+
+- `README.md` gives the portfolio overview, setup commands, scores, and execution paths.
+- `PROJECT_STATUS_AND_NEXT_PLAN.md` tracks the current score, remaining issues, and next execution plan.
+
+### 2. Review Manual QA Coverage
+
+```text
+manual-testing/
+  TestPlan.md
+  TestCases.csv
+  TestCases.xlsx
+  TestCoverage.md
+  BusinessCoverage.md
+  ManualCoverageMatrix.md
+  ManualExecutionReport.md
+  QASignoffChecklist.md
+  BugReports.md
+  Screenshots/
+```
+
+- `TestPlan.md` defines scope, entry/exit criteria, environment, and testing approach.
+- `TestCases.csv` and `TestCases.xlsx` contain the full manual QA suite.
+- `ManualCoverageMatrix.md` explains why manual coverage is scored 100/100.
+- `ManualExecutionReport.md` tracks pass/fail/blocked/not-run execution progress.
+- `QASignoffChecklist.md` separates coverage signoff from execution signoff.
+- `BusinessCoverage.md` maps SureForms Business scenarios.
+- `BugReports.md` stores defect templates and real bugs.
+- `Screenshots/` is reserved for bug evidence and execution proof.
+
+### 3. Review Automation Design
+
+```text
+automation/
+  fixtures/
+    testData.js
+  pages/
+    formPage.js
+    sureformsAdminPage.js
+  tests/
+    smoke.spec.js
+    form.spec.js
+    createFormE2E.spec.js
+    interactive-summary.spec.js
+  utils/
+    env.js
+```
+
+- `fixtures/testData.js` stores reusable submission data.
+- `pages/formPage.js` handles frontend form actions and assertions.
+- `pages/sureformsAdminPage.js` handles WordPress login and SureForms admin form generation.
+- `tests/smoke.spec.js` verifies the local WordPress site and automation environment.
+- `tests/createFormE2E.spec.js` runs the passing end-to-end generated form flow.
+- `tests/form.spec.js` targets the static `/qa-test-form/` page once it exists.
+- `tests/interactive-summary.spec.js` runs a headed Chromium demo with a custom HTML summary.
+- `utils/env.js` loads `.env` values and shared runtime config.
+
+### 4. Check Automation Status Docs
+
+```text
+automation/
+  AutomationCoverage.md
+  AutomationExecutionWorkArea.md
+  AutomationStatus.md
+  PlaywrightSetupChecklist.md
+  WordPressPlaywrightSetup.md
+```
+
+- `AutomationCoverage.md` explains current and planned automation phases.
+- `AutomationExecutionWorkArea.md` tracks execution blockers and improvement path.
+- `AutomationStatus.md` records latest pass/fail automation results.
+- `PlaywrightSetupChecklist.md` shows why Playwright setup is 100/100.
+- `WordPressPlaywrightSetup.md` explains WordPress-specific Playwright options.
+
+### 5. Check Docker Setup
+
+```text
+automation/
+  Dockerfile
+  DockerStatus.md
+  DockerReadinessChecklist.md
+
+docker-compose.yml
+```
+
+- `Dockerfile` builds the Playwright runner image.
+- `docker-compose.yml` connects the Playwright container to the LocalWP site.
+- `DockerStatus.md` records verified Docker commands and versions.
+- `DockerReadinessChecklist.md` shows why Docker readiness is 100/100.
+
+### 6. Run The Main Commands
+
+```bash
+cd automation
+../.tools/bin/npm run test:smoke
+../.tools/bin/npm run test:create-form
+../.tools/bin/npm run docker:smoke
+```
+
+Expected currently:
+
+```text
+test:smoke        2 passed
+test:create-form 1 passed
+docker:smoke     2 passed
+```
+
+Full tree:
+
 ```text
 manual-testing/
   TestPlan.md
