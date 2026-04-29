@@ -38,6 +38,7 @@ Smoke automation status:
 ```text
 Command: ../.tools/bin/npm run test:smoke
 Result: 2 passed
+Latest checked: 2026-04-29
 ```
 
 Docker smoke status:

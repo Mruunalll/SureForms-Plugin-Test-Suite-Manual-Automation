@@ -22,6 +22,7 @@ Latest verified smoke run:
 Command: ../.tools/bin/npm run test:smoke
 Result: 2 passed
 Project: chromium
+Latest checked: 2026-04-29
 ```
 
 Known blocked form automation:
