@@ -4,14 +4,24 @@ Last checked: 2026-04-29
 
 ## Current Result
 
+Latest verified smoke run:
+
 ```text
-Total tests: 10
-Passed: 0
-Failed: 10
-Projects: chromium, mobile-chrome
+Command: ../.tools/bin/npm test -- tests/smoke.spec.js --project=chromium
+Result: 1 passed
+Project: chromium
 ```
 
-## Why Tests Are Failing
+Known blocked form automation:
+
+```text
+Form tests: 5 scenarios
+Configured projects: chromium, mobile-chrome
+Blocked checks: 10
+Reason: /qa-test-form/ is not created yet
+```
+
+## Why Form Tests Are Blocked
 
 The Playwright framework is installed and Chromium launches successfully when run outside the sandbox, but the configured frontend form page does not exist yet:
 
@@ -26,7 +36,7 @@ The captured Playwright page snapshot shows a WordPress `Page not found` page in
 - `getByLabel(/message/i)`
 - `getByRole('button', { name: /submit/i })`
 
-## Tests Currently Implemented
+## Form Tests Currently Implemented
 
 The suite currently has 5 tests, executed across 2 projects, for 10 total checks:
 

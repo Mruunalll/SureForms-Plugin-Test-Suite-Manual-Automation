@@ -149,3 +149,5 @@ Automation coverage is tracked in `automation/AutomationCoverage.md`.
 Current automation run status is tracked in `automation/AutomationStatus.md`.
 
 Docker setup status is tracked in `automation/DockerStatus.md`.
+
+Overall WIP status, remaining issues, testing score, and next plan are tracked in `PROJECT_STATUS_AND_NEXT_PLAN.md`.
