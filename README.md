@@ -30,6 +30,7 @@ automation/
     env.js
   .env.example
   AutomationCoverage.md
+  AutomationExecutionWorkArea.md
   AutomationStatus.md
   DockerStatus.md
   DockerReadinessChecklist.md
@@ -179,6 +180,8 @@ The manual suite currently targets 180 test cases across:
 - Multi-step, conversational, conditional logic, calculation, quiz, webhook, PayPal, and integration coverage
 
 Automation coverage is tracked in `automation/AutomationCoverage.md`.
+
+Automation execution work area is tracked in `automation/AutomationExecutionWorkArea.md`.
 
 Current automation run status is tracked in `automation/AutomationStatus.md`.
 

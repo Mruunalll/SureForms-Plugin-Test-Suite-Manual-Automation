@@ -33,6 +33,16 @@ Blocked checks: 10
 Reason: /qa-test-form/ is not created yet
 ```
 
+Latest form execution run:
+
+```text
+Command: ../.tools/bin/npm run test:form
+Total checks: 10
+Passed: 0
+Failed: 10
+Root cause: http://surefroms.test/qa-test-form/ returns HTTP 404
+```
+
 ## Why Form Tests Are Blocked
 
 The Playwright framework is installed and Chromium launches successfully when run outside the sandbox, but the configured frontend form page does not exist yet:
@@ -88,6 +98,7 @@ If the page exists but selectors still fail, inspect the generated SureForms HTM
 
 - `.env.example`
 - `README.md`
+- `AutomationExecutionWorkArea.md`
 - `PlaywrightSetupChecklist.md`
 - `playwright.config.js`
 - `utils/env.js`

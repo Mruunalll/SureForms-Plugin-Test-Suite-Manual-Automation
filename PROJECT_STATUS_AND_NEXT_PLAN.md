@@ -74,7 +74,9 @@ docker compose config --quiet: passed
 | P1 | Business feature automation is pending | Business version coverage is mostly manual/planned | Add focused Business tests for fields, conditional logic, and multi-step forms |
 | P2 | Entries/email notification verification is pending | Submission backend coverage is incomplete | Add entry verification and mail-log checks if tooling is available |
 | P2 | Accessibility automation is not added | A11y score is manual only | Add axe-based checks later |
-| P2 | CI is not configured | GitHub cannot run tests automatically | Add GitHub Actions after local tests are stable |
+| P2 | GitHub portfolio readiness polish is pending | Repo is WIP-ready but not final-polished | Add CI, badges, screenshots, and execution evidence after local tests are stable |
+
+Automation execution details are tracked in `automation/AutomationExecutionWorkArea.md`.
 
 ## Immediate Next Actions
 
