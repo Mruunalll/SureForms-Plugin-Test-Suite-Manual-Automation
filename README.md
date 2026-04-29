@@ -8,16 +8,16 @@ This project demonstrates real QA/SDET work: test planning, test case design, co
 
 | Category | Status |
 |---|---|
-| **📌 Project** | ![status](https://img.shields.io/badge/status-WIP-blue) ![portfolio](https://img.shields.io/badge/portfolio-ready--to--show-brightgreen) ![score](https://img.shields.io/badge/overall-91%2F100-brightgreen) |
-| **🧪 Manual QA** | ![coverage](https://img.shields.io/badge/coverage-100%2F100-brightgreen) ![test cases](https://img.shields.io/badge/test%20cases-181-blue) ![execution](https://img.shields.io/badge/execution-not%20started-yellow) |
-| **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-100%2F100-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright-45ba4b) ![pattern](https://img.shields.io/badge/pattern-Page%20Object%20Model-blueviolet) |
-| **⚡ Automation Execution** | ![execution](https://img.shields.io/badge/execution-55%2F100-yellow) ![smoke](https://img.shields.io/badge/smoke-2%20passed-brightgreen) ![e2e](https://img.shields.io/badge/generated%20form%20E2E-1%20passed-brightgreen) ![static form](https://img.shields.io/badge/static%20form%20suite-pending-orange) |
-| **🐳 Docker** | ![docker](https://img.shields.io/badge/docker-100%2F100-brightgreen) ![compose](https://img.shields.io/badge/compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
-| **💼 SureForms Business** | ![business](https://img.shields.io/badge/business%20coverage-100%2F100-brightgreen) ![automation](https://img.shields.io/badge/business%20automation-planned-yellow) |
-| **🌐 GitHub Readiness** | ![readiness](https://img.shields.io/badge/readiness-90%2F100-brightgreen) ![docs](https://img.shields.io/badge/docs-polished-brightgreen) ![ci](https://img.shields.io/badge/CI-planned-yellow) |
-| **✅ Latest Verified Build** | ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![playwright](https://img.shields.io/badge/Playwright-1.59.1-blue) |
+| **📌 Project** | ![status](https://img.shields.io/badge/status-Polished%20WIP-blue) ![portfolio](https://img.shields.io/badge/portfolio-ready--to--show-brightgreen) ![score](https://img.shields.io/badge/overall-91%2F100-brightgreen) |
+| **🧪 Manual QA** | ![coverage](https://img.shields.io/badge/coverage-100%2F100-brightgreen) ![test cases](https://img.shields.io/badge/test%20cases-181-blue) ![artifacts](https://img.shields.io/badge/artifacts-9%20files-blueviolet) ![execution](https://img.shields.io/badge/execution-not%20run%20yet-yellow) |
+| **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-100%2F100-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright%201.59.1-45ba4b) ![specs](https://img.shields.io/badge/specs-4-blue) ![pages](https://img.shields.io/badge/page%20objects-2-blueviolet) |
+| **⚡ Automation Execution** | ![execution](https://img.shields.io/badge/execution-55%2F100-yellow) ![smoke](https://img.shields.io/badge/smoke-2%20passed-brightgreen) ![e2e](https://img.shields.io/badge/generated%20form%20E2E-1%20passed-brightgreen) ![static form](https://img.shields.io/badge/static%20form%20suite-blocked-orange) |
+| **🐳 Docker** | ![readiness](https://img.shields.io/badge/readiness-100%2F100-brightgreen) ![dockerfile](https://img.shields.io/badge/Dockerfile-ready-blue) ![compose](https://img.shields.io/badge/Compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
+| **💼 SureForms Business** | ![business](https://img.shields.io/badge/manual%20coverage-100%2F100-brightgreen) ![version](https://img.shields.io/badge/Business-2.8.2-blue) ![automation](https://img.shields.io/badge/automation-planned-yellow) |
+| **🌐 GitHub Readiness** | ![readiness](https://img.shields.io/badge/readiness-90%2F100-brightgreen) ![readme](https://img.shields.io/badge/README-polished-brightgreen) ![docs](https://img.shields.io/badge/docs-structured-brightgreen) ![ci](https://img.shields.io/badge/CI-planned-yellow) |
+| **✅ Latest Verified Build** | ![date](https://img.shields.io/badge/verified-2026--04--29-blue) ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![docker smoke](https://img.shields.io/badge/docker%3Asmoke-2%20passed-brightgreen) |
 
-> **Current truth:** Playwright setup and Docker readiness are complete. Automation execution is improving, but it is not 100/100 yet because the static `/qa-test-form/` suite, Business automation, accessibility checks, and backend verification are still pending.
+> **Current truth:** The repo is portfolio-ready as a polished WIP. Manual coverage, Playwright setup, Docker readiness, and Business manual coverage are complete. Automation execution is **55/100** because the static `/qa-test-form/` suite, Business automation, accessibility checks, backend verification, CI, and manual execution evidence are still pending.
 
 ## ✅ Latest Verified Automation
 
