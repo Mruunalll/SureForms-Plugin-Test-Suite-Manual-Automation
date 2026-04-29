@@ -1,4 +1,4 @@
-# SureForms QA Testing
+# SureForms Plugin Test Suite (Manual + Automation)
 
 Manual and Playwright automation testing project for the SureForms WordPress plugin on a local WordPress site.
 
