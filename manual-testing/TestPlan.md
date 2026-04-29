@@ -67,7 +67,7 @@ Note: Payment, native integration, and advanced conditional workflow smoke check
 
 ## Test Case Volume
 
-The QA suite includes 180 target test cases in `TestCases.csv`, grouped by setup, form builder, frontend, functional, validation, UI, responsive, accessibility, compatibility, data, email, performance, reliability, error handling, regression, and SureForms Business coverage.
+The QA suite includes 181 target test cases in `TestCases.csv`, grouped by setup, form builder, frontend, functional, validation, UI, responsive, accessibility, compatibility, data, email, performance, reliability, error handling, regression, and SureForms Business coverage.
 
 ## Manual QA Coverage Score
 

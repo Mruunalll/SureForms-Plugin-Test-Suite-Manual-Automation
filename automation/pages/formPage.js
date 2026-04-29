@@ -21,6 +21,10 @@ class FormPage {
     await this.page.goto(this.formPath);
   }
 
+  async openUrl(url) {
+    await this.page.goto(url);
+  }
+
   async expectFormVisible() {
     await expect(this.nameInput).toBeVisible();
     await expect(this.emailInput).toBeVisible();
@@ -53,6 +57,16 @@ class FormPage {
 
   async expectSuccessMessage() {
     await expect(this.successMessage.first()).toBeVisible();
+  }
+
+  async expectThankYouMessage(message) {
+    await expect(async () => {
+      const visibleText = await this.page.locator('body').innerText();
+      const normalizedVisibleText = visibleText.replace(/\s+/g, ' ').trim();
+      const normalizedMessage = message.replace(/\s+/g, ' ').trim();
+
+      expect(normalizedVisibleText).toContain(normalizedMessage);
+    }).toPass({ timeout: 30000 });
   }
 
   async expectValidationMessage() {

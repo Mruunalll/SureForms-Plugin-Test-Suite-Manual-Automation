@@ -85,6 +85,7 @@ From `automation/`:
 npm test
 npm run test:smoke
 npm run test:form
+npm run test:create-form
 npm run test:headed
 npm run test:mobile
 npm run test:interactive
@@ -160,7 +161,7 @@ Manual QA coverage status: 100/100 planned coverage, with execution status track
 
 ## Current Test Coverage
 
-The manual suite currently targets 180 test cases across:
+The manual suite currently targets 181 test cases across:
 
 - WordPress and plugin setup
 - SureForms form builder

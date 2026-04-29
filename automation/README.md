@@ -29,6 +29,7 @@ FORM_PATH=/qa-test-form/
 npm test
 npm run test:smoke
 npm run test:form
+npm run test:create-form
 npm run test:headed
 npm run test:mobile
 npm run test:interactive

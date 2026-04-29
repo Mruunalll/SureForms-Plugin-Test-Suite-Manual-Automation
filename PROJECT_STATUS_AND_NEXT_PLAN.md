@@ -13,22 +13,22 @@ Current recommendation: publish as WIP and continue execution. The project is pr
 | Area | Score | Status |
 |---|---:|---|
 | Repository structure | 90/100 | Strong WIP structure with manual and automation folders |
-| Manual QA coverage | 100/100 | 180 planned test cases plus traceability, execution report, signoff checklist, defect process, evidence plan, and Business coverage |
+| Manual QA coverage | 100/100 | 181 planned test cases plus traceability, execution report, signoff checklist, defect process, evidence plan, and Business coverage |
 | Playwright setup | 100/100 | Framework, config, scripts, reports, artifacts, env template, helpers, page object, test data, headed demo, and Docker path are complete |
-| Automation execution | 35/100 | Basic smoke test passes, but form automation is blocked until the QA form page exists |
+| Automation execution | 55/100 | Smoke automation and generated SureForms admin-to-frontend E2E pass; static `/qa-test-form/` suite is still blocked |
 | Docker readiness | 100/100 | Dockerfile, Compose service, host mapping, report volumes, env passthrough, build/test/doctor/smoke commands, and readiness checklist are complete |
 | SureForms Business manual coverage | 100/100 | Business setup, fields, workflows, integrations, payments, entries, accessibility, responsive, and regression scenarios are documented |
 | GitHub portfolio readiness | 80/100 | Good to publish as WIP with clear blockers and next steps |
 
-Overall testing project score: 88/100 WIP
+Overall testing project score: 90/100 WIP
 
 ## Score Summary
 
 | Score Type | Current Score | Meaning |
 |---|---:|---|
 | Planning and structure score | 100/100 | Manual coverage, Playwright setup, Docker readiness, and documentation structure are complete |
-| Execution score | 35/100 | Only smoke tests are verified; form, Business, manual execution, and backend checks are still pending |
-| Portfolio readiness score | 88/100 | Strong WIP project ready to show with clearly documented blockers |
+| Execution score | 55/100 | Smoke tests and one generated form E2E are verified; static form, Business, manual execution, and backend checks are still pending |
+| Portfolio readiness score | 90/100 | Strong WIP project ready to show with clearly documented blockers and one passing E2E |
 
 ## Latest Verified Automation Result
 
@@ -50,6 +50,33 @@ Verified coverage:
 - Local WordPress homepage opens successfully.
 - Basic site smoke check passes.
 - Automation environment values are configured.
+
+## Latest Verified Generated Form E2E Result
+
+Command run from `automation/`:
+
+```bash
+../.tools/bin/npm run test:create-form
+```
+
+Result:
+
+```text
+1 passed
+```
+
+Verified coverage:
+
+- WordPress login.
+- SureForms dashboard access.
+- Create New Form button.
+- AI prompt-based contact form generation.
+- Editor created form verification.
+- Instant Form enablement.
+- Form publish.
+- Frontend form view.
+- Field fill and submit.
+- Thank-you message verification.
 
 ## Latest Verified Docker Result
 

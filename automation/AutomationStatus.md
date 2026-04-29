@@ -25,6 +25,15 @@ Project: chromium
 Latest checked: 2026-04-29
 ```
 
+Latest verified admin-to-frontend E2E run:
+
+```text
+Command: ../.tools/bin/npm run test:create-form
+Result: 1 passed
+Coverage: Login, SureForms dashboard, Create New Form, AI prompt generation, editor verification, Instant Form enablement, publish, frontend view, field fill, submit, thank-you message
+Latest checked: 2026-04-29
+```
+
 Known blocked form automation:
 
 ```text

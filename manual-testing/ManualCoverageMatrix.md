@@ -34,7 +34,7 @@ This score means the manual QA scope is fully mapped and documented for the Sure
 | Category | Test Cases | Coverage Status |
 |---|---:|---|
 | Setup | 5 | Complete |
-| Form Builder | 11 | Complete |
+| Form Builder | 12 | Complete |
 | WordPress Page | 3 | Complete |
 | Frontend | 11 | Complete |
 | Functional | 8 | Complete |
@@ -60,7 +60,7 @@ This score means the manual QA scope is fully mapped and documented for the Sure
 | Business Accessibility | 2 | Complete |
 | Business Responsive | 2 | Complete |
 | Business Regression | 1 | Complete |
-| Total | 180 | Complete |
+| Total | 181 | Complete |
 
 ## Requirements Traceability
 

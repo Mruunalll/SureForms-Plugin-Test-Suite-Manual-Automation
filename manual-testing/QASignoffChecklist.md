@@ -8,7 +8,7 @@ Last updated: 2026-04-29
 |---|---|
 | Test plan reviewed | Complete |
 | Scope and out-of-scope areas documented | Complete |
-| 180 manual test cases created | Complete |
+| 181 manual test cases created | Complete |
 | Core SureForms workflow covered | Complete |
 | Validation scenarios covered | Complete |
 | UI and responsive scenarios covered | Complete |

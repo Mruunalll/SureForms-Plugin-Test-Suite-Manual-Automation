@@ -5,6 +5,7 @@
 - Verify local site is reachable.
 - Verify wp-admin login works.
 - Verify SureForms plugin is active.
+- Generate, publish, view, and submit an AI-created SureForms contact form.
 - Verify QA form page loads.
 - Verify core fields and submit button are visible.
 

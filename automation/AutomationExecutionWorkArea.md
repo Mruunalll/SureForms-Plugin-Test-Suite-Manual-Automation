@@ -10,9 +10,9 @@ Secondary/P2 focus: GitHub portfolio readiness
 
 ## Current Automation Execution Score
 
-Automation execution score: 35/100
+Automation execution score: 55/100
 
-The framework, Playwright setup, Docker readiness, and smoke checks are complete. Execution remains low because the main SureForms form page does not exist yet.
+The framework, Playwright setup, Docker readiness, smoke checks, and one admin-to-frontend SureForms E2E flow are complete. Execution is still not complete because the static `/qa-test-form/` suite remains blocked and broader Business/accessibility/backend automation is pending.
 
 ## Latest Checks
 
@@ -31,6 +31,14 @@ Total checks: 10
 Passed: 0
 Failed: 10
 Projects: chromium, mobile-chrome
+```
+
+Admin-to-frontend generated form run:
+
+```text
+Command: ../.tools/bin/npm run test:create-form
+Result: 1 passed
+Coverage: Login, dashboard Create New Form, AI prompt generation, editor verification, Instant Form, publish, frontend view, field fill, submit, thank-you message
 ```
 
 Smoke automation status:
@@ -68,6 +76,7 @@ The failures happen because `/qa-test-form/` returns a WordPress 404 page. Becau
 | P0 | Mark Name, Email, and Message as required | Pending | Validation tests have expected required fields |
 | P0 | Publish WordPress page `/qa-test-form/` | Pending | Target URL returns 200 and renders the form |
 | P0 | Embed `QA Test Form` on `/qa-test-form/` | Pending | Playwright can see the frontend form |
+| P0 | Add generated contact form E2E test | Complete | `tests/createFormE2E.spec.js` passes on Chromium |
 | P1 | Inspect actual rendered SureForms HTML | Pending | Stable selectors are confirmed |
 | P1 | Update `pages/formPage.js` selectors if needed | Pending | Locators match SureForms markup |
 | P1 | Run `npm run test:form` | Pending | Desktop and mobile form tests have real results |
@@ -80,9 +89,9 @@ The failures happen because `/qa-test-form/` returns a WordPress 404 page. Becau
 
 | Milestone | Expected Score |
 |---|---:|
-| Current state: smoke passes, form page missing | 35/100 |
-| `/qa-test-form/` exists and loads the form | 55/100 |
-| Selectors are confirmed and visibility tests pass | 65/100 |
+| Current state: smoke passes, generated form E2E passes, static form page missing | 55/100 |
+| `/qa-test-form/` exists and loads the form | 65/100 |
+| Selectors are confirmed and visibility tests pass | 70/100 |
 | Happy path and validation tests pass on Chromium | 75/100 |
 | Form suite passes on Chromium and mobile-chrome | 85/100 |
 | Business smoke automation starts passing | 90/100 |

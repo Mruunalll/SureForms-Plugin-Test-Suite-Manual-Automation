@@ -7,6 +7,7 @@
     "test": "playwright test",
     "test:smoke": "playwright test tests/smoke.spec.js --project=chromium",
     "test:form": "playwright test tests/form.spec.js",
+    "test:create-form": "playwright test tests/createFormE2E.spec.js --project=chromium --workers=1",
     "test:headed": "playwright test --headed",
     "test:mobile": "playwright test --project=mobile-chrome",
     "test:debug": "PWDEBUG=1 playwright test --project=chromium --headed --workers=1",

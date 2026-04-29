@@ -6,11 +6,11 @@ Last updated: 2026-04-29
 
 | Metric | Count |
 |---|---:|
-| Total planned manual test cases | 180 |
+| Total planned manual test cases | 181 |
 | Passed | 0 |
 | Failed | 0 |
 | Blocked | 0 |
-| Not Run | 180 |
+| Not Run | 181 |
 
 Execution status: Not started
 
