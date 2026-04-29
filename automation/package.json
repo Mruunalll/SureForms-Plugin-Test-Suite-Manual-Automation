@@ -1,0 +1,18 @@
+{
+  "name": "sureforms-playwright-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation tests for the SureForms WordPress plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:interactive": "INTERACTIVE_DEMO=true OBSERVE_MS=300000 playwright test tests/interactive-summary.spec.js --project=chromium --headed --workers=1",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "docker:test": "docker compose -f ../docker-compose.yml run --rm playwright",
+    "docker:build": "docker compose -f ../docker-compose.yml build playwright"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

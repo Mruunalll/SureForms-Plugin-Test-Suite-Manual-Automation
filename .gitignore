@@ -1,0 +1,8 @@
+node_modules/
+automation/node_modules/
+automation/playwright-report/
+automation/test-results/
+.tools/
+.artifact-build/
+.DS_Store
+.env
