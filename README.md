@@ -18,10 +18,23 @@ manual-testing/
   Screenshots/
 
 automation/
-  tests/
-    form.spec.js
+  fixtures/
+    testData.js
   pages/
     formPage.js
+  tests/
+    form.spec.js
+    interactive-summary.spec.js
+    smoke.spec.js
+  utils/
+    env.js
+  .env.example
+  AutomationCoverage.md
+  AutomationStatus.md
+  DockerStatus.md
+  PlaywrightSetupChecklist.md
+  README.md
+  Dockerfile
   playwright.config.js
   package.json
 ```
@@ -47,6 +60,12 @@ npm install
 npx playwright install
 ```
 
+Optional local environment file:
+
+```bash
+cp .env.example .env
+```
+
 In this workspace, global `npm` is not currently available, so a local npm bootstrap has been added under `.tools/npm`.
 
 Use this fallback command if `npm` is still unavailable:
@@ -61,7 +80,10 @@ From `automation/`:
 
 ```bash
 npm test
+npm run test:smoke
+npm run test:form
 npm run test:headed
+npm run test:mobile
 npm run test:interactive
 npm run test:ui
 npm run report
@@ -71,6 +93,7 @@ Fallback without global npm:
 
 ```bash
 ../.tools/bin/npm test
+../.tools/bin/npm run test:smoke
 ../.tools/bin/npm run test:interactive
 ```
 
@@ -155,5 +178,9 @@ Automation coverage is tracked in `automation/AutomationCoverage.md`.
 Current automation run status is tracked in `automation/AutomationStatus.md`.
 
 Docker setup status is tracked in `automation/DockerStatus.md`.
+
+Playwright setup status is tracked in `automation/PlaywrightSetupChecklist.md`.
+
+Playwright setup status: 100/100. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
 
 Overall WIP status, remaining issues, testing score, and next plan are tracked in `PROJECT_STATUS_AND_NEXT_PLAN.md`.

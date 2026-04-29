@@ -4,11 +4,23 @@ Last checked: 2026-04-29
 
 ## Current Result
 
+Playwright setup status:
+
+```text
+Setup score: 100/100
+Framework: Complete
+Config: Complete
+Reports/artifacts: Complete
+Environment file template: Complete
+Reusable helpers/page objects/test data: Complete
+Docker path: Complete
+```
+
 Latest verified smoke run:
 
 ```text
-Command: ../.tools/bin/npm test -- tests/smoke.spec.js --project=chromium
-Result: 1 passed
+Command: ../.tools/bin/npm run test:smoke
+Result: 2 passed
 Project: chromium
 ```
 
@@ -71,3 +83,17 @@ cd automation
 ```
 
 If the page exists but selectors still fail, inspect the generated SureForms HTML and update `pages/formPage.js` with the actual field selectors.
+
+## Setup Evidence
+
+- `.env.example`
+- `README.md`
+- `PlaywrightSetupChecklist.md`
+- `playwright.config.js`
+- `utils/env.js`
+- `fixtures/testData.js`
+- `pages/formPage.js`
+- `tests/smoke.spec.js`
+- `tests/form.spec.js`
+- `tests/interactive-summary.spec.js`
+- `Dockerfile`

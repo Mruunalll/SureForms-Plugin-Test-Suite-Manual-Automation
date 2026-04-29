@@ -1,9 +1,11 @@
 const { expect } = require('@playwright/test');
+const { invalidEmailSubmission, validSubmission } = require('../fixtures/testData');
+const { getTestConfig } = require('../utils/env');
 
 class FormPage {
   constructor(page) {
     this.page = page;
-    this.formPath = process.env.FORM_PATH || '/qa-test-form/';
+    this.formPath = getTestConfig().formPath;
 
     this.nameInput = page.getByLabel(/name/i);
     this.emailInput = page.getByLabel(/email/i);
@@ -26,15 +28,15 @@ class FormPage {
     await expect(this.submitButton).toBeVisible();
   }
 
-  async submitValidForm() {
-    await this.nameInput.fill('Mrunal QA');
-    await this.emailInput.fill('test@example.com');
+  async submitValidForm(data = validSubmission) {
+    await this.nameInput.fill(data.name);
+    await this.emailInput.fill(data.email);
 
     if (await this.phoneInput.count()) {
-      await this.phoneInput.fill('9876543210');
+      await this.phoneInput.fill(data.phone);
     }
 
-    await this.messageInput.fill('This is a Playwright test submission.');
+    await this.messageInput.fill(data.message);
     await this.submitButton.click();
   }
 
@@ -42,10 +44,10 @@ class FormPage {
     await this.submitButton.click();
   }
 
-  async submitInvalidEmailForm() {
-    await this.nameInput.fill('Mrunal QA');
-    await this.emailInput.fill('invalid-email');
-    await this.messageInput.fill('Testing invalid email validation.');
+  async submitInvalidEmailForm(data = invalidEmailSubmission) {
+    await this.nameInput.fill(data.name);
+    await this.emailInput.fill(data.email);
+    await this.messageInput.fill(data.message);
     await this.submitButton.click();
   }
 
@@ -59,4 +61,3 @@ class FormPage {
 }
 
 module.exports = { FormPage };
-

@@ -5,10 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:smoke": "playwright test tests/smoke.spec.js --project=chromium",
+    "test:form": "playwright test tests/form.spec.js",
     "test:headed": "playwright test --headed",
+    "test:mobile": "playwright test --project=mobile-chrome",
+    "test:debug": "PWDEBUG=1 playwright test --project=chromium --headed --workers=1",
     "test:interactive": "INTERACTIVE_DEMO=true OBSERVE_MS=300000 playwright test tests/interactive-summary.spec.js --project=chromium --headed --workers=1",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
+    "doctor": "playwright --version",
+    "install:browsers": "playwright install",
     "docker:test": "docker compose -f ../docker-compose.yml run --rm playwright",
     "docker:build": "docker compose -f ../docker-compose.yml build playwright"
   },
