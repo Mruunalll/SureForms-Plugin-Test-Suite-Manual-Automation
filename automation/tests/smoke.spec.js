@@ -10,6 +10,11 @@ test.describe('Local WordPress smoke checks', () => {
   });
 
   test('homepage should load successfully', async ({ page }) => {
+    test.skip(
+      process.env.CI && !process.env.BASE_URL,
+      'Hosted CI cannot reach the LocalWP site unless BASE_URL points to a CI-accessible WordPress target.'
+    );
+
     const response = await page.goto('/');
 
     expect(response.status()).toBeLessThan(400);

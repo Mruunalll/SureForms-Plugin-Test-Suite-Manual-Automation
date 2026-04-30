@@ -19,7 +19,7 @@ Current recommendation: keep public only as an honest WIP. The main credibility 
 | Screenshots/evidence | 0 captured | Empty evidence folder |
 | Playwright setup | Ready | Config, scripts, reports, env template, page objects, test data, and Docker path exist |
 | Automation execution | 3 passing checks | 2 smoke checks + 1 generated SureForms E2E pass |
-| Static form automation | 0/16 checks passing | Blocked because `/qa-test-form/` returns 404 |
+| Static form automation | 0/22 checks passing | Blocked because `/qa-test-form/` returns 404 |
 | Docker execution | 2 smoke checks passing | Docker runner is usable for smoke coverage |
 | Business coverage | Design only | Business cases are documented but not executed or automated |
 | CI/report hosting | Partial | GitHub Actions validation workflow added; hosted Playwright report still missing |

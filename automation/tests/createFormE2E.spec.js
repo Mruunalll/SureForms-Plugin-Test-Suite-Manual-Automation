@@ -1,6 +1,10 @@
-const { test } = require('@playwright/test');
+const { expect, test } = require('@playwright/test');
 const { SureFormsAdminPage } = require('../pages/sureformsAdminPage');
 const { FormPage } = require('../pages/formPage');
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 
 test.describe('SureForms admin generated contact form flow', () => {
   test('should generate, publish, view, submit, and verify thank-you message', async ({ page }) => {
@@ -27,9 +31,13 @@ test.describe('SureForms admin generated contact form flow', () => {
     await sureFormsAdminPage.publishForm();
 
     const publishedFormUrl = await sureFormsAdminPage.getPublishedFormUrl();
+    expect(publishedFormUrl).toMatch(/\/form\/[^/?#]+\/?$/i);
 
     await formPage.openUrl(publishedFormUrl);
+    await expect(page).toHaveURL(/\/form\/[^/?#]+\/?$/i);
+    await expect(page).toHaveTitle(new RegExp(`${escapeRegExp(formName)}|QA Contact Form`, 'i'));
     await formPage.expectFormVisible();
+    await formPage.expectRequiredFieldsVisible();
     await formPage.submitValidForm({
       name: 'Mrunal QA',
       email: 'mrunal.qa@example.com',

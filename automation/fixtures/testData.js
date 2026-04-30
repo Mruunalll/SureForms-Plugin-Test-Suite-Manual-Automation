@@ -19,7 +19,7 @@ const edgeCaseSubmission = {
 };
 
 const longInputSubmission = {
-  name: 'Mrunal QA Boundary '.repeat(12).trim(),
+  name: 'A'.repeat(500),
   email: 'boundary@example.com',
   phone: '4155550188',
   message: 'Boundary message '.repeat(40).trim()

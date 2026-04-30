@@ -11,8 +11,9 @@ The automation project is structurally ready, but execution evidence is still li
 | Playwright setup | Ready | Config, scripts, reports, fixtures, page objects, and env loader exist |
 | Docker setup | Ready | Dockerfile and Compose runner are configured |
 | CI validation | Added | GitHub Actions validates install, JS syntax, and Playwright availability |
+| CI smoke workflow | Added | Runs `npm run test:smoke`; hosted CI skips LocalWP homepage check unless `BASE_URL` is provided |
 | Passing local checks | 3 | 2 smoke checks + 1 generated SureForms E2E |
-| Static form checks | 0/16 passing | Blocked by missing `/qa-test-form/` WordPress page |
+| Static form checks | 0/22 passing | Blocked by missing `/qa-test-form/` WordPress page |
 | Business automation | 0 checks | Planned only |
 | Backend/email checks | 0 checks | Planned only |
 
@@ -44,9 +45,9 @@ The static form suite is blocked because `/qa-test-form/` is not published in Wo
 
 ```text
 Command: ../.tools/bin/npm run test:form
-Total checks: 16
+Total checks: 22
 Passed: 0
-Failed/blocked: 16
+Failed/blocked: 22
 Root cause: configured BASE_URL + /qa-test-form/ returns a WordPress 404
 ```
 
@@ -136,9 +137,14 @@ If the LocalWP site was created with a misspelled host, keep that value in `.env
 
 ## CI Strategy
 
-The GitHub Actions workflow currently runs `npm run ci:validate`, which can pass on hosted GitHub runners because it does not depend on a private LocalWP site.
+The GitHub Actions workflows currently cover:
 
-LocalWP browser tests should not be added to hosted CI until one of these exists:
+- `automation-validation.yml`: runs `npm run ci:validate`.
+- `smoke.yml`: runs `npm run test:smoke` on pushes to `main`.
+
+Hosted GitHub runners cannot reach a private LocalWP site by default. Because of that, the homepage smoke check skips in CI unless `BASE_URL` is configured to point to a CI-accessible WordPress target.
+
+Full LocalWP browser tests should not be added to hosted CI until one of these exists:
 
 - A self-hosted runner on the machine with LocalWP.
 - A `wp-env` setup that installs WordPress, SureForms, and test data inside CI.

@@ -25,6 +25,16 @@ test.describe('SureForms QA Test Form', () => {
     await formPage.expectRequiredValidationMessage();
   });
 
+  for (const fieldName of ['name', 'email', 'message']) {
+    test(`should show a required validation error when ${fieldName} is missing`, async ({ page }) => {
+      const formPage = new FormPage(page);
+
+      await formPage.open();
+      await formPage.submitWithMissingRequiredField(fieldName);
+      await formPage.expectRequiredValidationFor(fieldName);
+    });
+  }
+
   test('should show validation error for invalid email', async ({ page }) => {
     const formPage = new FormPage(page);
 
@@ -37,6 +47,7 @@ test.describe('SureForms QA Test Form', () => {
     const formPage = new FormPage(page);
 
     await formPage.open();
+    await formPage.expectSubmitButtonEnabled();
     await formPage.submitLongInputForm();
     await formPage.expectSuccessMessage();
   });
@@ -45,6 +56,7 @@ test.describe('SureForms QA Test Form', () => {
     const formPage = new FormPage(page);
 
     await formPage.open();
+    await formPage.expectSubmitButtonNotDisabled();
     await formPage.submitSpecialCharactersForm();
     await formPage.expectSuccessMessage();
   });
