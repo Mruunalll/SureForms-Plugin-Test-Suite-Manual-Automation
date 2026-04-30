@@ -1,5 +1,10 @@
 const { expect } = require('@playwright/test');
-const { invalidEmailSubmission, validSubmission } = require('../fixtures/testData');
+const {
+  edgeCaseSubmission,
+  invalidEmailSubmission,
+  longInputSubmission,
+  validSubmission
+} = require('../fixtures/testData');
 const { getTestConfig } = require('../utils/env');
 
 class FormPage {
@@ -14,7 +19,10 @@ class FormPage {
     this.submitButton = page.getByRole('button', { name: /submit/i });
 
     this.successMessage = page.locator('text=/success|submitted|thank you/i');
-    this.validationMessage = page.locator('text=/required|invalid|valid email|enter/i');
+    this.thankYouMessage = page.getByText(/thank you/i);
+    this.requiredValidationMessage = page.locator('text=/required|required field|field is required/i');
+    this.invalidEmailValidationMessage = page.locator('text=/valid email|invalid email|email address/i');
+    this.validationMessage = page.locator('text=/required|invalid|valid email|enter|email address/i');
   }
 
   async open() {
@@ -33,15 +41,19 @@ class FormPage {
   }
 
   async submitValidForm(data = validSubmission) {
+    await this.fillForm(data);
+    await this.submitButton.click();
+  }
+
+  async fillForm(data = validSubmission) {
     await this.nameInput.fill(data.name);
     await this.emailInput.fill(data.email);
 
-    if (await this.phoneInput.count()) {
+    if ((await this.phoneInput.count()) && typeof data.phone === 'string') {
       await this.phoneInput.fill(data.phone);
     }
 
     await this.messageInput.fill(data.message);
-    await this.submitButton.click();
   }
 
   async submitEmptyForm() {
@@ -49,10 +61,29 @@ class FormPage {
   }
 
   async submitInvalidEmailForm(data = invalidEmailSubmission) {
-    await this.nameInput.fill(data.name);
-    await this.emailInput.fill(data.email);
-    await this.messageInput.fill(data.message);
+    await this.fillForm({
+      phone: '',
+      ...data
+    });
     await this.submitButton.click();
+  }
+
+  async submitLongInputForm(data = longInputSubmission) {
+    await this.fillForm(data);
+    await expect(this.nameInput).toHaveValue(data.name);
+    await expect(this.messageInput).toHaveValue(data.message);
+    await this.submitButton.click();
+  }
+
+  async submitSpecialCharactersForm(data = edgeCaseSubmission) {
+    await this.fillForm(data);
+    await expect(this.nameInput).toHaveValue(data.name);
+    await this.submitButton.click();
+  }
+
+  async doubleSubmitValidForm(data = validSubmission) {
+    await this.fillForm(data);
+    await this.submitButton.dblclick();
   }
 
   async expectSuccessMessage() {
@@ -71,6 +102,19 @@ class FormPage {
 
   async expectValidationMessage() {
     await expect(this.validationMessage.first()).toBeVisible();
+  }
+
+  async expectRequiredValidationMessage() {
+    await expect(this.requiredValidationMessage.first()).toBeVisible();
+  }
+
+  async expectInvalidEmailValidationMessage() {
+    await expect(this.invalidEmailValidationMessage.first()).toBeVisible();
+  }
+
+  async expectSingleThankYouMessage() {
+    await expect(this.thankYouMessage).toHaveCount(1);
+    await expect(this.thankYouMessage.first()).toBeVisible();
   }
 }
 

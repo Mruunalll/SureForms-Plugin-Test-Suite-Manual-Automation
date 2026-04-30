@@ -22,7 +22,7 @@ test.describe('SureForms QA Test Form', () => {
 
     await formPage.open();
     await formPage.submitEmptyForm();
-    await formPage.expectValidationMessage();
+    await formPage.expectRequiredValidationMessage();
   });
 
   test('should show validation error for invalid email', async ({ page }) => {
@@ -30,7 +30,31 @@ test.describe('SureForms QA Test Form', () => {
 
     await formPage.open();
     await formPage.submitInvalidEmailForm();
-    await formPage.expectValidationMessage();
+    await formPage.expectInvalidEmailValidationMessage();
+  });
+
+  test('should handle long boundary input without crashing', async ({ page }) => {
+    const formPage = new FormPage(page);
+
+    await formPage.open();
+    await formPage.submitLongInputForm();
+    await formPage.expectSuccessMessage();
+  });
+
+  test('should submit special characters in name safely', async ({ page }) => {
+    const formPage = new FormPage(page);
+
+    await formPage.open();
+    await formPage.submitSpecialCharactersForm();
+    await formPage.expectSuccessMessage();
+  });
+
+  test('should show a single success state after rapid double submit', async ({ page }) => {
+    const formPage = new FormPage(page);
+
+    await formPage.open();
+    await formPage.doubleSubmitValidForm();
+    await formPage.expectSingleThankYouMessage();
   });
 
   test('should display submit button correctly', async ({ page }) => {
@@ -42,4 +66,3 @@ test.describe('SureForms QA Test Form', () => {
     await expect(formPage.submitButton).toBeEnabled();
   });
 });
-

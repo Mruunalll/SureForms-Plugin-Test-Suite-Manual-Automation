@@ -1,5 +1,7 @@
 # 🧪 SureForms Plugin Test Suite (Manual + Automation)
 
+[![Automation Validation](https://github.com/Mruunalll/SureForms-Plugin-Test-Suite-Manual-Automation/actions/workflows/automation-validation.yml/badge.svg)](https://github.com/Mruunalll/SureForms-Plugin-Test-Suite-Manual-Automation/actions/workflows/automation-validation.yml)
+
 Manual QA + Playwright automation portfolio project for testing the **SureForms WordPress plugin** and **SureForms Business** on a local WordPress site.
 
 This project demonstrates real QA/SDET work: test planning, test case design, coverage tracking, bug reporting, Dockerized Playwright setup, page objects, reusable test data, and an end-to-end SureForms form creation/submission flow.
@@ -11,10 +13,10 @@ This project demonstrates real QA/SDET work: test planning, test case design, co
 | **📌 Project** | ![status](https://img.shields.io/badge/status-WIP-orange) ![evidence](https://img.shields.io/badge/evidence%20readiness-38%2F100-red) ![docs](https://img.shields.io/badge/docs-structured-blue) |
 | **🧪 Manual QA** | ![design](https://img.shields.io/badge/test%20design-181%20cases-blue) ![execution](https://img.shields.io/badge/executed-0%2F181-red) ![bugs](https://img.shields.io/badge/real%20bugs-0-red) ![screenshots](https://img.shields.io/badge/screenshots-0-red) |
 | **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-ready-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright%201.59.1-45ba4b) ![specs](https://img.shields.io/badge/specs-4-blue) ![pages](https://img.shields.io/badge/page%20objects-2-blueviolet) |
-| **⚡ Automation Execution** | ![passing](https://img.shields.io/badge/passing%20checks-3-brightgreen) ![blocked](https://img.shields.io/badge/static%20form%20checks-10%20blocked-red) ![root cause](https://img.shields.io/badge/root%20cause-%2Fqa--test--form%20404-orange) |
+| **⚡ Automation Execution** | ![passing](https://img.shields.io/badge/passing%20checks-3-brightgreen) ![blocked](https://img.shields.io/badge/static%20form%20checks-16%20blocked-red) ![root cause](https://img.shields.io/badge/root%20cause-%2Fqa--test--form%20404-orange) |
 | **🐳 Docker** | ![dockerfile](https://img.shields.io/badge/Dockerfile-ready-blue) ![compose](https://img.shields.io/badge/Compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
 | **💼 SureForms Business** | ![business](https://img.shields.io/badge/manual%20design-done-blue) ![version](https://img.shields.io/badge/Business-2.8.2-blue) ![execution](https://img.shields.io/badge/execution-not%20run-red) ![automation](https://img.shields.io/badge/automation-not%20started-red) |
-| **🌐 GitHub Readiness** | ![readme](https://img.shields.io/badge/README-polished-blue) ![ci](https://img.shields.io/badge/CI-missing-red) ![reports](https://img.shields.io/badge/hosted%20reports-missing-red) ![evidence](https://img.shields.io/badge/portfolio%20evidence-low-orange) |
+| **🌐 GitHub Readiness** | ![readme](https://img.shields.io/badge/README-polished-blue) ![ci](https://img.shields.io/badge/CI-validation%20added-blue) ![reports](https://img.shields.io/badge/hosted%20reports-missing-red) ![evidence](https://img.shields.io/badge/portfolio%20evidence-low-orange) |
 | **✅ Latest Verified Build** | ![date](https://img.shields.io/badge/verified-2026--04--29-blue) ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![docker smoke](https://img.shields.io/badge/docker%3Asmoke-2%20passed-brightgreen) |
 
 > **Current truth:** This is a structured WIP, not an execution-complete QA portfolio yet. Test design is strong, but manual execution is **0/181**, real logged bugs are **0**, screenshots are **0**, and the static `/qa-test-form/` automation is blocked by a WordPress 404. The repo should be judged by evidence readiness, not by planning completeness.
@@ -66,10 +68,11 @@ The generated SureForms E2E test verifies:
 
 ## 🌐 Local Test Site
 
-- WordPress admin: `http://surefroms.test/wp-admin/`
-- Frontend base URL: `http://surefroms.test`
+- WordPress admin: `BASE_URL + /wp-admin/`
+- Frontend base URL: configure with `BASE_URL`
 - Static automation target path: `/qa-test-form/`
 - Generated form E2E target: dynamic SureForms `/form/{slug}/` URL
+- Example LocalWP host: `http://sureforms.test`
 
 ## 📂 Project Structure
 
@@ -109,15 +112,11 @@ sureforms-qa-testing/
     ├── .env.example                      # Local env template
     ├── playwright.config.js              # Playwright projects/reporting/artifacts
     ├── package.json                      # npm test scripts
+    ├── scripts/
+    │   └── validate-js.js                # CI syntax/tooling validation
     ├── Dockerfile                        # Playwright Docker image
     ├── README.md                         # Automation-specific instructions
-    ├── AutomationCoverage.md             # Automation roadmap
-    ├── AutomationExecutionWorkArea.md    # Execution evidence and blockers
-    ├── AutomationStatus.md               # Latest automation results
-    ├── PlaywrightSetupChecklist.md       # Playwright setup evidence
-    ├── DockerStatus.md                   # Docker verification results
-    ├── DockerReadinessChecklist.md       # Docker readiness evidence
-    └── WordPressPlaywrightSetup.md       # WordPress Playwright notes
+    └── AUTOMATION_STATUS.md              # One automation status, coverage, Docker, and CI hub
 ```
 
 ## 🗂️ Artifact Map
@@ -127,11 +126,11 @@ sureforms-qa-testing/
 | **Project status** | `README.md`, `PROJECT_STATUS_AND_NEXT_PLAN.md` | Portfolio overview, current evidence status, blockers, next plan |
 | **Manual QA** | `TestPlan.md`, `TestCases.csv`, `TestCases.xlsx` | Manual planning and executable test inventory |
 | **Design coverage proof** | `ManualCoverageMatrix.md`, `TestCoverage.md`, `BusinessCoverage.md` | Evidence that manual and Business scenarios are mapped, not executed |
-| **Execution tracking** | `ManualExecutionReport.md`, `AutomationStatus.md`, `AutomationExecutionWorkArea.md` | Pass/fail/blocked/not-run status and automation progress |
+| **Execution tracking** | `ManualExecutionReport.md`, `AUTOMATION_STATUS.md` | Pass/fail/blocked/not-run status and automation progress |
 | **Bug evidence** | `BugReports.md`, `Screenshots/` | Defect reporting and visual proof |
 | **Automation code** | `tests/`, `pages/`, `fixtures/`, `utils/` | Playwright tests, page objects, data, and config helpers |
-| **Tooling proof** | `PlaywrightSetupChecklist.md`, `DockerReadinessChecklist.md`, `DockerStatus.md` | Setup/readiness evidence and command verification |
-| **WordPress strategy** | `WordPressPlaywrightSetup.md` | Notes for WordPress-specific Playwright/admin/editor automation |
+| **Tooling proof** | `AUTOMATION_STATUS.md`, `.github/workflows/automation-validation.yml` | Setup/readiness evidence and CI validation |
+| **WordPress strategy** | `AUTOMATION_STATUS.md` | Notes for WordPress-specific Playwright/admin/editor automation |
 
 ## 🧭 Automation Entry Points
 
@@ -191,20 +190,15 @@ Review path/
 │       ├── tests/interactive-summary.spec.js
 │       └── utils/env.js
 │
-├── 4️⃣ Automation status docs
+├── 4️⃣ Automation status
 │   └── automation/
-│       ├── AutomationCoverage.md
-│       ├── AutomationExecutionWorkArea.md
-│       ├── AutomationStatus.md
-│       ├── PlaywrightSetupChecklist.md
-│       └── WordPressPlaywrightSetup.md
+│       └── AUTOMATION_STATUS.md
 │
 ├── 5️⃣ Docker setup
 │   ├── docker-compose.yml
 │   └── automation/
 │       ├── Dockerfile
-│       ├── DockerStatus.md
-│       └── DockerReadinessChecklist.md
+│       └── AUTOMATION_STATUS.md
 │
 └── 6️⃣ Command verification
     └── npm run test:smoke, test:create-form, docker:smoke
@@ -309,7 +303,7 @@ automation coverage/
     ├── Email notification verification
     ├── Accessibility checks
     ├── Visual checks
-    └── GitHub Actions smoke workflow
+    └── LocalWP/browser CI after self-hosted runner, wp-env, or staging target exists
 ```
 
 | Automation Area | Current State | Evidence |
@@ -318,9 +312,9 @@ automation coverage/
 | **✅ Generated form E2E** | Passing | `tests/createFormE2E.spec.js` |
 | **✅ Page objects** | Implemented | `pages/formPage.js`, `pages/sureformsAdminPage.js` |
 | **✅ Test data** | Reusable | `fixtures/testData.js` |
-| **✅ Docker smoke** | Passing | `DockerStatus.md` |
+| **✅ Docker smoke** | Passing | `AUTOMATION_STATUS.md` |
 | **⏳ Static form suite** | Pending WordPress page | `tests/form.spec.js` |
-| **⏳ Business automation** | Planned | `AutomationCoverage.md` |
+| **⏳ Business automation** | Planned | `AUTOMATION_STATUS.md` |
 
 ## ⚙️ Automation Setup
 
@@ -350,6 +344,7 @@ From `automation/`:
 
 ```bash
 npm test
+npm run ci:validate
 npm run test:smoke
 npm run test:form
 npm run test:create-form
@@ -371,12 +366,12 @@ Fallback without global npm:
 Override target settings:
 
 ```bash
-BASE_URL=http://surefroms.test FORM_PATH=/qa-test-form/ npm test
+BASE_URL=http://sureforms.test FORM_PATH=/qa-test-form/ npm test
 ```
 
 ## 🐳 Docker Execution
 
-Docker uses the official Playwright image and maps `surefroms.test` to the Mac host so the container can reach the LocalWP site.
+Docker uses the official Playwright image and maps the configured `LOCAL_WP_HOST` to the Mac host so the container can reach the LocalWP site.
 
 From the project root:
 
@@ -458,12 +453,7 @@ coverage highlights/
 ## 📌 Key Documents
 
 - `PROJECT_STATUS_AND_NEXT_PLAN.md` - evidence readiness, next plan, and remaining issues
-- `automation/AutomationStatus.md` - latest automation results
-- `automation/AutomationExecutionWorkArea.md` - execution gaps and improvement path
-- `automation/AutomationCoverage.md` - automation roadmap
-- `automation/PlaywrightSetupChecklist.md` - setup readiness and evidence
-- `automation/DockerReadinessChecklist.md` - Docker readiness and evidence
-- `automation/WordPressPlaywrightSetup.md` - WordPress-specific Playwright notes
+- `automation/AUTOMATION_STATUS.md` - automation results, blockers, roadmap, Docker status, and CI strategy
 - `manual-testing/ManualCoverageMatrix.md` - manual design coverage and traceability
 
 ## 🚧 Known Gaps

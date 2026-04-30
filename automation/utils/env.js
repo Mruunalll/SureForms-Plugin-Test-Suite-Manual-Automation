@@ -43,7 +43,7 @@ function getNumberEnv(name, defaultValue) {
 
 function getTestConfig() {
   return {
-    baseURL: process.env.BASE_URL || 'http://surefroms.test',
+    baseURL: process.env.BASE_URL || 'http://sureforms.test',
     formPath: process.env.FORM_PATH || '/qa-test-form/',
     wpAdminPath: process.env.WP_ADMIN_PATH || '/wp-admin/',
     wpUsername: process.env.WP_USERNAME || 'mrunalp',

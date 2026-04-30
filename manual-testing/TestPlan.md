@@ -42,7 +42,7 @@ Note: Payment, native integration, and advanced conditional workflow smoke check
 
 ## Test Environment
 
-- Site: `http://surefroms.test`
+- Site: local WordPress site configured through `BASE_URL`
 - WordPress: Local WordPress
 - Plugin: SureForms
 - Browser: Chromium

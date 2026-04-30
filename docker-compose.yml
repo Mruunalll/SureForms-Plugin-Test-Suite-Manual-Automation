@@ -4,7 +4,7 @@ services:
       context: ./automation
       dockerfile: Dockerfile
     environment:
-      BASE_URL: ${BASE_URL:-http://surefroms.test}
+      BASE_URL: ${BASE_URL:-http://sureforms.test}
       FORM_PATH: ${FORM_PATH:-/qa-test-form/}
       WP_ADMIN_PATH: ${WP_ADMIN_PATH:-/wp-admin/}
       HEADLESS: ${HEADLESS:-true}
@@ -15,7 +15,7 @@ services:
       PW_SCREENSHOT: ${PW_SCREENSHOT:-only-on-failure}
       CI: "true"
     extra_hosts:
-      - "surefroms.test:host-gateway"
+      - "${LOCAL_WP_HOST:-sureforms.test}:host-gateway"
     volumes:
       - ./automation/test-results:/app/test-results
       - ./automation/playwright-report:/app/playwright-report

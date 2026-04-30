@@ -19,10 +19,10 @@ Current recommendation: keep public only as an honest WIP. The main credibility 
 | Screenshots/evidence | 0 captured | Empty evidence folder |
 | Playwright setup | Ready | Config, scripts, reports, env template, page objects, test data, and Docker path exist |
 | Automation execution | 3 passing checks | 2 smoke checks + 1 generated SureForms E2E pass |
-| Static form automation | 0/10 checks passing | Blocked because `/qa-test-form/` returns 404 |
+| Static form automation | 0/16 checks passing | Blocked because `/qa-test-form/` returns 404 |
 | Docker execution | 2 smoke checks passing | Docker runner is usable for smoke coverage |
 | Business coverage | Design only | Business cases are documented but not executed or automated |
-| CI/report hosting | Missing | No GitHub Actions badge or hosted Playwright report |
+| CI/report hosting | Partial | GitHub Actions validation workflow added; hosted Playwright report still missing |
 
 Overall evidence readiness: **38/100 WIP**
 
@@ -106,10 +106,10 @@ docker compose config --quiet: passed
 | P1 | Business feature automation is pending | Business version coverage is mostly manual/planned | Add focused Business tests for fields, conditional logic, and multi-step forms |
 | P2 | Entries/email notification verification is pending | Submission backend coverage is incomplete | Add entry verification and mail-log checks if tooling is available |
 | P2 | Accessibility automation is not added | A11y score is manual only | Add axe-based checks later |
-| P2 | GitHub Actions is missing | No green CI proof on push | Add smoke workflow after local execution is stable |
+| P2 | Browser smoke CI is not available on hosted GitHub runners | LocalWP is private to the developer machine | Add self-hosted runner, `wp-env`, or staging target before running browser smoke in CI |
 | P2 | Hosted Playwright report is missing | Recruiters cannot inspect run evidence quickly | Add screenshots/report artifact link after tests run |
 
-Automation execution details are tracked in `automation/AutomationExecutionWorkArea.md`.
+Automation execution details are tracked in `automation/AUTOMATION_STATUS.md`.
 
 ## Immediate Next Actions
 
@@ -122,7 +122,7 @@ Automation execution details are tracked in `automation/AutomationExecutionWorkA
 | 5 | Run `../.tools/bin/npm test` | Playwright | Full automation result is known |
 | 6 | Execute P0/P1 manual cases | Manual QA | Execution evidence starts moving from Not Run to Pass/Fail/Blocked |
 | 7 | Capture screenshots and real bugs | Manual QA | Portfolio has visible evidence, not only planned coverage |
-| 8 | Add CI after local suite is stable | GitHub Actions | Repo can run smoke checks automatically |
+| 8 | Extend CI after local suite is stable | GitHub Actions | Repo can run browser checks automatically when a CI-accessible WordPress target exists |
 
 ## Next Plan
 
@@ -163,8 +163,8 @@ Target evidence readiness after this phase: 82/100
 
 1. Add screenshots of test execution and important bugs.
 2. Add Playwright HTML report screenshots or a short execution video.
-3. Add GitHub Actions for smoke tests.
-4. Add badges to `README.md` after CI is configured.
+3. Extend GitHub Actions from validation to browser smoke after a CI-accessible WordPress target exists.
+4. Keep CI and report badges updated after execution evidence exists.
 5. Add a release-style project summary with completed coverage and known gaps.
 
 Target evidence readiness after this phase: 90/100

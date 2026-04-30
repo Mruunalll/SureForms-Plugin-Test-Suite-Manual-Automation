@@ -15,6 +15,7 @@
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "doctor": "playwright --version",
+    "ci:validate": "node scripts/validate-js.js && playwright --version",
     "install:browsers": "playwright install",
     "docker:test": "docker compose -f ../docker-compose.yml run --rm playwright",
     "docker:smoke": "docker compose -f ../docker-compose.yml run --rm playwright npm run test:smoke",
