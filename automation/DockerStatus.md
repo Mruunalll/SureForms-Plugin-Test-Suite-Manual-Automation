@@ -26,10 +26,10 @@ The zsh profile files were updated to include Docker Desktop's CLI path:
 
 ## Project Docker Status
 
-Docker readiness score:
+Docker readiness status:
 
 ```text
-100/100
+Ready
 ```
 
 Docker files added:

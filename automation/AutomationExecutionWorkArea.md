@@ -1,6 +1,6 @@
 # Automation Execution Work Area
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Current Priority
 
@@ -8,11 +8,22 @@ Primary focus: Automation execution
 
 Secondary/P2 focus: GitHub portfolio readiness
 
-## Current Automation Execution Score
+## Current Automation Execution Evidence
 
-Automation execution score: 55/100
+Automation execution status: Partial
 
-The framework, Playwright setup, Docker readiness, smoke checks, and one admin-to-frontend SureForms E2E flow are complete. Execution is still not complete because the static `/qa-test-form/` suite remains blocked and broader Business/accessibility/backend automation is pending.
+The framework, Playwright setup, Docker readiness, smoke checks, and one admin-to-frontend SureForms E2E flow are complete. Execution is still weak because the static `/qa-test-form/` suite remains blocked and broader Business/accessibility/backend automation is pending.
+
+Current measurable evidence:
+
+| Metric | Count |
+|---|---:|
+| Passing smoke checks | 2 |
+| Passing generated form E2E checks | 1 |
+| Passing static form checks | 0 |
+| Blocked/failing static form checks | 10 |
+| Business automation checks | 0 |
+| Backend entry/email checks | 0 |
 
 ## Latest Checks
 
@@ -80,22 +91,22 @@ The failures happen because `/qa-test-form/` returns a WordPress 404 page. Becau
 | P1 | Inspect actual rendered SureForms HTML | Pending | Stable selectors are confirmed |
 | P1 | Update `pages/formPage.js` selectors if needed | Pending | Locators match SureForms markup |
 | P1 | Run `npm run test:form` | Pending | Desktop and mobile form tests have real results |
-| P1 | Record execution outcome in `AutomationStatus.md` | Pending | Automation score can be updated |
+| P1 | Record execution outcome in `AutomationStatus.md` | Pending | Automation evidence can be updated |
 | P2 | Add WordPress Playwright utilities | Pending | `@wordpress/e2e-test-utils-playwright` supports admin/editor/REST automation |
 | P2 | Add more automation scenarios | Pending | Missing-name, missing-email, edge input, responsive, accessibility |
 | P2 | Add GitHub Actions smoke workflow | Pending | GitHub portfolio readiness improves after local execution is stable |
 
-## Score Improvement Path
+## Evidence Improvement Path
 
-| Milestone | Expected Score |
-|---|---:|
-| Current state: smoke passes, generated form E2E passes, static form page missing | 55/100 |
-| `/qa-test-form/` exists and loads the form | 65/100 |
-| Selectors are confirmed and visibility tests pass | 70/100 |
-| Happy path and validation tests pass on Chromium | 75/100 |
-| Form suite passes on Chromium and mobile-chrome | 85/100 |
-| Business smoke automation starts passing | 90/100 |
-| CI smoke workflow is added after local stability | 92/100 |
+| Milestone | Evidence Gain |
+|---|---|
+| Current state: smoke passes, generated form E2E passes, static form page missing | Basic runner proof only |
+| `/qa-test-form/` exists and loads the form | Static form suite can execute against real UI |
+| Selectors are confirmed and visibility tests pass | Page object is grounded in actual SureForms markup |
+| Happy path and validation tests pass on Chromium | Core frontend behavior has automation proof |
+| Form suite passes on Chromium and mobile-chrome | Desktop and mobile regression path exists |
+| Business smoke automation starts passing | Business version coverage moves beyond planning |
+| CI smoke workflow is added after local stability | GitHub has visible execution proof |
 
 ## Next Best Action
 

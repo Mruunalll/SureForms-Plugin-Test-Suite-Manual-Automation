@@ -4,9 +4,9 @@ Last updated: 2026-04-29
 
 ## Docker Readiness Score
 
-Docker readiness score: 100/100
+Docker readiness status: Ready
 
-This score means Docker is fully prepared for repeatable Playwright execution against the local WordPress test site. It does not mean the full SureForms form suite passes yet. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
+This means Docker is prepared for repeatable Playwright execution against the local WordPress test site. It does not mean the full SureForms form suite passes yet. Full form execution is still blocked until `/qa-test-form/` exists in WordPress.
 
 ## Readiness Matrix
 

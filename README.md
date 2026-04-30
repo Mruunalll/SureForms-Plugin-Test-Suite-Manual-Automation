@@ -8,16 +8,16 @@ This project demonstrates real QA/SDET work: test planning, test case design, co
 
 | Category | Status |
 |---|---|
-| **📌 Project** | ![status](https://img.shields.io/badge/status-Polished%20WIP-blue) ![portfolio](https://img.shields.io/badge/portfolio-ready--to--show-brightgreen) ![score](https://img.shields.io/badge/overall-91%2F100-brightgreen) |
-| **🧪 Manual QA** | ![coverage](https://img.shields.io/badge/coverage-100%2F100-brightgreen) ![test cases](https://img.shields.io/badge/test%20cases-181-blue) ![artifacts](https://img.shields.io/badge/artifacts-9%20files-blueviolet) ![execution](https://img.shields.io/badge/execution-not%20run%20yet-yellow) |
-| **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-100%2F100-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright%201.59.1-45ba4b) ![specs](https://img.shields.io/badge/specs-4-blue) ![pages](https://img.shields.io/badge/page%20objects-2-blueviolet) |
-| **⚡ Automation Execution** | ![execution](https://img.shields.io/badge/execution-55%2F100-yellow) ![smoke](https://img.shields.io/badge/smoke-2%20passed-brightgreen) ![e2e](https://img.shields.io/badge/generated%20form%20E2E-1%20passed-brightgreen) ![static form](https://img.shields.io/badge/static%20form%20suite-blocked-orange) |
-| **🐳 Docker** | ![readiness](https://img.shields.io/badge/readiness-100%2F100-brightgreen) ![dockerfile](https://img.shields.io/badge/Dockerfile-ready-blue) ![compose](https://img.shields.io/badge/Compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
-| **💼 SureForms Business** | ![business](https://img.shields.io/badge/manual%20coverage-100%2F100-brightgreen) ![version](https://img.shields.io/badge/Business-2.8.2-blue) ![automation](https://img.shields.io/badge/automation-planned-yellow) |
-| **🌐 GitHub Readiness** | ![readiness](https://img.shields.io/badge/readiness-90%2F100-brightgreen) ![readme](https://img.shields.io/badge/README-polished-brightgreen) ![docs](https://img.shields.io/badge/docs-structured-brightgreen) ![ci](https://img.shields.io/badge/CI-planned-yellow) |
+| **📌 Project** | ![status](https://img.shields.io/badge/status-WIP-orange) ![evidence](https://img.shields.io/badge/evidence%20readiness-38%2F100-red) ![docs](https://img.shields.io/badge/docs-structured-blue) |
+| **🧪 Manual QA** | ![design](https://img.shields.io/badge/test%20design-181%20cases-blue) ![execution](https://img.shields.io/badge/executed-0%2F181-red) ![bugs](https://img.shields.io/badge/real%20bugs-0-red) ![screenshots](https://img.shields.io/badge/screenshots-0-red) |
+| **🤖 Playwright Setup** | ![setup](https://img.shields.io/badge/setup-ready-brightgreen) ![framework](https://img.shields.io/badge/framework-Playwright%201.59.1-45ba4b) ![specs](https://img.shields.io/badge/specs-4-blue) ![pages](https://img.shields.io/badge/page%20objects-2-blueviolet) |
+| **⚡ Automation Execution** | ![passing](https://img.shields.io/badge/passing%20checks-3-brightgreen) ![blocked](https://img.shields.io/badge/static%20form%20checks-10%20blocked-red) ![root cause](https://img.shields.io/badge/root%20cause-%2Fqa--test--form%20404-orange) |
+| **🐳 Docker** | ![dockerfile](https://img.shields.io/badge/Dockerfile-ready-blue) ![compose](https://img.shields.io/badge/Compose-ready-blue) ![docker smoke](https://img.shields.io/badge/docker%20smoke-2%20passed-brightgreen) |
+| **💼 SureForms Business** | ![business](https://img.shields.io/badge/manual%20design-done-blue) ![version](https://img.shields.io/badge/Business-2.8.2-blue) ![execution](https://img.shields.io/badge/execution-not%20run-red) ![automation](https://img.shields.io/badge/automation-not%20started-red) |
+| **🌐 GitHub Readiness** | ![readme](https://img.shields.io/badge/README-polished-blue) ![ci](https://img.shields.io/badge/CI-missing-red) ![reports](https://img.shields.io/badge/hosted%20reports-missing-red) ![evidence](https://img.shields.io/badge/portfolio%20evidence-low-orange) |
 | **✅ Latest Verified Build** | ![date](https://img.shields.io/badge/verified-2026--04--29-blue) ![test smoke](https://img.shields.io/badge/test%3Asmoke-2%20passed-brightgreen) ![test create form](https://img.shields.io/badge/test%3Acreate--form-1%20passed-brightgreen) ![docker smoke](https://img.shields.io/badge/docker%3Asmoke-2%20passed-brightgreen) |
 
-> **Current truth:** The repo is portfolio-ready as a polished WIP. Manual coverage, Playwright setup, Docker readiness, and Business manual coverage are complete. Automation execution is **55/100** because the static `/qa-test-form/` suite, Business automation, accessibility checks, backend verification, CI, and manual execution evidence are still pending.
+> **Current truth:** This is a structured WIP, not an execution-complete QA portfolio yet. Test design is strong, but manual execution is **0/181**, real logged bugs are **0**, screenshots are **0**, and the static `/qa-test-form/` automation is blocked by a WordPress 404. The repo should be judged by evidence readiness, not by planning completeness.
 
 ## ✅ Latest Verified Automation
 
@@ -77,8 +77,8 @@ Use the repo in this order:
 
 ```text
 sureforms-qa-testing/
-├── 📘 README.md                         # Portfolio overview, scores, setup, commands
-├── 📊 PROJECT_STATUS_AND_NEXT_PLAN.md    # Current score, blockers, next phases
+├── 📘 README.md                         # Portfolio overview, evidence status, setup, commands
+├── 📊 PROJECT_STATUS_AND_NEXT_PLAN.md    # Current evidence status, blockers, next phases
 ├── 🐳 docker-compose.yml                 # Docker runner for Playwright
 │
 ├── 🧪 manual-testing/                    # Manual QA deliverables
@@ -87,7 +87,7 @@ sureforms-qa-testing/
 │   ├── TestCases.xlsx                    # Spreadsheet version of test cases
 │   ├── TestCoverage.md                   # Coverage map
 │   ├── BusinessCoverage.md               # SureForms Business coverage
-│   ├── ManualCoverageMatrix.md           # 100/100 manual coverage evidence
+│   ├── ManualCoverageMatrix.md           # Manual test design coverage evidence
 │   ├── ManualExecutionReport.md          # Pass/fail/blocked/not-run tracking
 │   ├── QASignoffChecklist.md             # Coverage vs execution signoff
 │   ├── BugReports.md                     # Defect template and examples
@@ -112,11 +112,11 @@ sureforms-qa-testing/
     ├── Dockerfile                        # Playwright Docker image
     ├── README.md                         # Automation-specific instructions
     ├── AutomationCoverage.md             # Automation roadmap
-    ├── AutomationExecutionWorkArea.md    # Execution score and blockers
+    ├── AutomationExecutionWorkArea.md    # Execution evidence and blockers
     ├── AutomationStatus.md               # Latest automation results
-    ├── PlaywrightSetupChecklist.md       # 100/100 setup evidence
+    ├── PlaywrightSetupChecklist.md       # Playwright setup evidence
     ├── DockerStatus.md                   # Docker verification results
-    ├── DockerReadinessChecklist.md       # 100/100 Docker evidence
+    ├── DockerReadinessChecklist.md       # Docker readiness evidence
     └── WordPressPlaywrightSetup.md       # WordPress Playwright notes
 ```
 
@@ -124,13 +124,13 @@ sureforms-qa-testing/
 
 | Area | Main Artifacts | Purpose |
 |---|---|---|
-| **Project status** | `README.md`, `PROJECT_STATUS_AND_NEXT_PLAN.md` | Portfolio overview, current score, blockers, next plan |
+| **Project status** | `README.md`, `PROJECT_STATUS_AND_NEXT_PLAN.md` | Portfolio overview, current evidence status, blockers, next plan |
 | **Manual QA** | `TestPlan.md`, `TestCases.csv`, `TestCases.xlsx` | Manual planning and executable test inventory |
-| **Coverage proof** | `ManualCoverageMatrix.md`, `TestCoverage.md`, `BusinessCoverage.md` | Evidence for 100/100 manual and Business coverage |
+| **Design coverage proof** | `ManualCoverageMatrix.md`, `TestCoverage.md`, `BusinessCoverage.md` | Evidence that manual and Business scenarios are mapped, not executed |
 | **Execution tracking** | `ManualExecutionReport.md`, `AutomationStatus.md`, `AutomationExecutionWorkArea.md` | Pass/fail/blocked/not-run status and automation progress |
 | **Bug evidence** | `BugReports.md`, `Screenshots/` | Defect reporting and visual proof |
 | **Automation code** | `tests/`, `pages/`, `fixtures/`, `utils/` | Playwright tests, page objects, data, and config helpers |
-| **Tooling proof** | `PlaywrightSetupChecklist.md`, `DockerReadinessChecklist.md`, `DockerStatus.md` | Setup/readiness scoring and command verification |
+| **Tooling proof** | `PlaywrightSetupChecklist.md`, `DockerReadinessChecklist.md`, `DockerStatus.md` | Setup/readiness evidence and command verification |
 | **WordPress strategy** | `WordPressPlaywrightSetup.md` | Notes for WordPress-specific Playwright/admin/editor automation |
 
 ## 🧭 Automation Entry Points
@@ -164,11 +164,11 @@ automation/
 Review path/
 ├── 1️⃣ Project status
 │   ├── README.md
-│   │   └── Portfolio overview, setup commands, scores, and execution paths
+│   │   └── Portfolio overview, setup commands, evidence status, and execution paths
 │   └── PROJECT_STATUS_AND_NEXT_PLAN.md
-│       └── Current score, remaining issues, and next execution plan
+│       └── Current evidence status, remaining issues, and next execution plan
 │
-├── 2️⃣ Manual QA coverage
+├── 2️⃣ Manual QA design coverage
 │   └── manual-testing/
 │       ├── TestPlan.md
 │       ├── TestCases.csv / TestCases.xlsx
@@ -249,7 +249,7 @@ manual-testing/
 │   └── SureForms Business and advanced feature coverage
 │
 ├── 🎯 ManualCoverageMatrix.md
-│   └── 100/100 planning and traceability evidence
+│   └── Planning and traceability evidence
 │
 ├── 🧾 ManualExecutionReport.md
 │   └── Pass/fail/blocked/not-run execution tracker
@@ -261,19 +261,19 @@ manual-testing/
 │   └── Defect format, examples, severity, expected vs actual results
 │
 └── 📸 Screenshots/
-    └── Bug proof, UI proof, execution proof, and GitHub-ready evidence
+    └── Evidence target folder; currently no screenshots are captured
 ```
 
 | QA Area | Coverage Proof | Status |
 |---|---|---|
 | **📋 Planning** | `TestPlan.md` | Complete |
 | **✅ Test inventory** | `TestCases.csv`, `TestCases.xlsx` | 181 cases |
-| **🎯 Traceability** | `ManualCoverageMatrix.md`, `TestCoverage.md` | 100/100 |
-| **💼 Business coverage** | `BusinessCoverage.md` | 100/100 |
+| **🎯 Traceability** | `ManualCoverageMatrix.md`, `TestCoverage.md` | Design complete |
+| **💼 Business coverage** | `BusinessCoverage.md` | Design complete |
 | **🧾 Execution tracking** | `ManualExecutionReport.md`, `QASignoffChecklist.md` | Ready |
-| **🐞 Defect handling** | `BugReports.md`, `Screenshots/` | Template ready |
+| **🐞 Defect handling** | `BugReports.md`, `Screenshots/` | Template ready; no real bugs/screenshots yet |
 
-Manual coverage is **100/100** for planning and traceability. Execution status is tracked separately so the project stays honest and professional.
+Manual test design coverage is complete for planning and traceability. Manual execution is still **0/181**, so this project should not be described as manually tested yet.
 
 ## 🤖 Automation Coverage
 
@@ -457,27 +457,30 @@ coverage highlights/
 
 ## 📌 Key Documents
 
-- `PROJECT_STATUS_AND_NEXT_PLAN.md` - overall score, next plan, and remaining issues
+- `PROJECT_STATUS_AND_NEXT_PLAN.md` - evidence readiness, next plan, and remaining issues
 - `automation/AutomationStatus.md` - latest automation results
 - `automation/AutomationExecutionWorkArea.md` - execution gaps and improvement path
 - `automation/AutomationCoverage.md` - automation roadmap
-- `automation/PlaywrightSetupChecklist.md` - setup score and evidence
-- `automation/DockerReadinessChecklist.md` - Docker readiness score and evidence
+- `automation/PlaywrightSetupChecklist.md` - setup readiness and evidence
+- `automation/DockerReadinessChecklist.md` - Docker readiness and evidence
 - `automation/WordPressPlaywrightSetup.md` - WordPress-specific Playwright notes
-- `manual-testing/ManualCoverageMatrix.md` - manual coverage score and traceability
+- `manual-testing/ManualCoverageMatrix.md` - manual design coverage and traceability
 
 ## 🚧 Known Gaps
 
-This repo is WIP, but in good portfolio shape.
+This repo is WIP. It has a strong structure, but it needs real execution evidence before it should be treated as a finished portfolio project.
 
 Remaining work:
 
 - Create/publish the static `/qa-test-form/` WordPress page
 - Run and stabilize `tests/form.spec.js`
+- Execute manual P0/P1 cases and update pass/fail/block counts
+- Log real reproducible bugs if found
+- Capture and link screenshots in `manual-testing/Screenshots/`
 - Add Business automation for advanced fields/workflows
 - Add accessibility automation
 - Add backend entries/email verification
-- Add CI, badges, screenshots, and execution video polish
+- Add CI, hosted Playwright report evidence, and execution video polish
 
 ## 🏁 Portfolio Outcome
 

@@ -26,11 +26,23 @@ This project targets broad QA coverage across the SureForms plugin workflow, fro
 | Business Data/Integrations | Entries, uploads, signatures, webhooks, native integrations, PayPal | Mostly manual + automated later |
 | Business Regression | Pro assets, mobile behavior, accessibility, plugin dependency | Manual + automated |
 
-## Manual Coverage Status
+## Manual Design Coverage Status
 
-Manual QA coverage score: 100/100
+Manual QA test design status: Complete
 
-The manual test design is complete across core SureForms workflows, validation, UI, responsive behavior, accessibility, regression, data, email, and SureForms Business scenarios. Execution status is tracked separately in `ManualExecutionReport.md`.
+The manual test design is complete across core SureForms workflows, validation, UI, responsive behavior, accessibility, regression, data, email, and SureForms Business scenarios.
+
+Execution status is separate and currently not started:
+
+| Metric | Count |
+|---|---:|
+| Designed manual test cases | 181 |
+| Executed manual test cases | 0 |
+| Not Run | 181 |
+| Real bugs logged | 0 |
+| Screenshots captured | 0 |
+
+The coverage map should be read as planning coverage, not pass/fail evidence.
 
 ## Automation Targeting Strategy
 

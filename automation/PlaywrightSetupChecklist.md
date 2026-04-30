@@ -4,9 +4,9 @@ Last updated: 2026-04-29
 
 ## Playwright Setup Score
 
-Playwright setup score: 100/100
+Playwright setup readiness: Ready
 
-This score means the framework, configuration, scripts, local/Docker execution paths, reusable structure, and reporting setup are complete. It does not mean all SureForms form tests pass yet. Form execution is still blocked until `/qa-test-form/` is created in WordPress.
+This means the framework, configuration, scripts, local/Docker execution paths, reusable structure, and reporting setup are complete. It does not mean all SureForms form tests pass yet. Form execution is still blocked until `/qa-test-form/` is created in WordPress.
 
 ## Setup Completion Matrix
 

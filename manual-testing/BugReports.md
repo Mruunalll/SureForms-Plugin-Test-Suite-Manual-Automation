@@ -2,6 +2,16 @@
 
 Document real issues found during manual or automation testing.
 
+## Current Defect Status
+
+| Metric | Count | Status |
+|---|---:|---|
+| Real defects logged | 0 | No manual execution has been completed yet |
+| Defects with screenshots | 0 | `Screenshots/` is currently empty |
+| Reproducible open defects | 0 | Pending execution |
+
+Do not count the sample below as a real bug. It is only a formatting example.
+
 ## Bug Template
 
 **Title:**  
@@ -60,12 +70,12 @@ Add screenshot under `manual-testing/Screenshots/`.
 | P2 | Fix when practical |
 | P3 | Nice-to-have improvement |
 
-## Sample Bug
+## Sample Bug Format Only
 
 **Title:** Form submits without required email  
 **Severity:** High  
 **Priority:** High  
-**Status:** Example  
+**Status:** Example only, not a real defect
 
 ### Steps to Reproduce
 

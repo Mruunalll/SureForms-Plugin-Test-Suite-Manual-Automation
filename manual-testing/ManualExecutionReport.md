@@ -1,6 +1,6 @@
 # Manual QA Execution Report
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Execution Summary
 
@@ -13,6 +13,17 @@ Last updated: 2026-04-29
 | Not Run | 181 |
 
 Execution status: Not started
+
+## Evidence Status
+
+| Evidence Type | Count | Status |
+|---|---:|---|
+| Real bug reports | 0 | None logged yet |
+| Screenshots | 0 | None captured yet |
+| Linked failed test cases | 0 | No executed failures yet |
+| Environment notes from execution | 0 | Pending first execution pass |
+
+This report is intentionally separated from test design coverage. The project has 181 designed manual cases, but it does not yet have manual execution proof.
 
 ## Current Blockers
 

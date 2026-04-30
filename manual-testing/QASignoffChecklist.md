@@ -1,8 +1,8 @@
 # QA Signoff Checklist
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
-## Manual Coverage Signoff
+## Manual Test Design Signoff
 
 | Item | Status |
 |---|---|
@@ -17,11 +17,13 @@ Last updated: 2026-04-29
 | Regression scenarios covered | Complete |
 | SureForms Business scenarios covered | Complete |
 | Bug report template available | Complete |
-| Screenshot/evidence folder available | Complete |
+| Screenshot/evidence folder available | Folder exists; no evidence captured yet |
 | Execution report available | Complete |
 | Coverage matrix available | Complete |
 
-Manual coverage signoff: Complete
+Manual test design signoff: Complete
+
+This signoff covers planning and traceability only. It does not mean manual QA execution has passed.
 
 ## Execution Signoff
 
@@ -40,6 +42,6 @@ Execution signoff: Pending
 
 ## Release Recommendation
 
-Current recommendation: WIP portfolio-ready, not final QA execution complete.
+Current recommendation: WIP only, not final QA execution complete.
 
-The manual QA coverage is complete, but execution should begin after the QA form page and Business test forms are created.
+The manual QA test design is complete, but execution should begin after the QA form page and Business test forms are created. Do not present this project as fully tested until execution counts, screenshots, and real defect evidence are added.

@@ -69,11 +69,11 @@ Note: Payment, native integration, and advanced conditional workflow smoke check
 
 The QA suite includes 181 target test cases in `TestCases.csv`, grouped by setup, form builder, frontend, functional, validation, UI, responsive, accessibility, compatibility, data, email, performance, reliability, error handling, regression, and SureForms Business coverage.
 
-## Manual QA Coverage Score
+## Manual QA Test Design Status
 
-Manual QA coverage is now 100/100 for planning and traceability.
+Manual QA test design is complete for planning and traceability. Manual execution has not started yet.
 
-Coverage artifacts:
+Planning artifacts:
 
 - `TestPlan.md`
 - `TestCases.csv`

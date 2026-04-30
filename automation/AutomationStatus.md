@@ -7,7 +7,7 @@ Last checked: 2026-04-29
 Playwright setup status:
 
 ```text
-Setup score: 100/100
+Setup readiness: Ready
 Framework: Complete
 Config: Complete
 Reports/artifacts: Complete

@@ -1,12 +1,25 @@
 # Manual QA Coverage Matrix
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
-## Manual Coverage Score
+## Manual Test Design Status
 
-Manual QA coverage score: 100/100
+Manual test design status: Complete
 
-This score means the manual QA scope is fully mapped and documented for the SureForms core plugin and SureForms Business version. It does not mean all test cases have passed. Execution status is tracked separately in `ManualExecutionReport.md`.
+This document proves that the manual QA scope is mapped and documented for the SureForms core plugin and SureForms Business version. It does **not** prove that testing has been executed. Execution status is tracked separately in `ManualExecutionReport.md`.
+
+Current execution reality:
+
+| Metric | Count |
+|---|---:|
+| Designed manual test cases | 181 |
+| Executed manual test cases | 0 |
+| Passed | 0 |
+| Failed | 0 |
+| Blocked | 0 |
+| Not Run | 181 |
+| Real bugs logged | 0 |
+| Screenshots captured | 0 |
 
 ## Coverage Completion Criteria
 
@@ -25,13 +38,13 @@ This score means the manual QA scope is fully mapped and documented for the Sure
 | Regression scenarios covered | Complete | `TestCases.csv`, `TestCases.xlsx` |
 | SureForms Business scenarios covered | Complete | `BusinessCoverage.md`, `TestCases.csv`, `TestCases.xlsx` |
 | Bug report template exists | Complete | `BugReports.md` |
-| Evidence/screenshot location exists | Complete | `Screenshots/` |
+| Evidence/screenshot location exists | Folder exists, no evidence yet | `Screenshots/` |
 | Execution report exists | Complete | `ManualExecutionReport.md` |
 | Signoff checklist exists | Complete | `QASignoffChecklist.md` |
 
 ## Test Case Distribution
 
-| Category | Test Cases | Coverage Status |
+| Category | Test Cases | Design Status |
 |---|---:|---|
 | Setup | 5 | Complete |
 | Form Builder | 12 | Complete |
@@ -60,7 +73,7 @@ This score means the manual QA scope is fully mapped and documented for the Sure
 | Business Accessibility | 2 | Complete |
 | Business Responsive | 2 | Complete |
 | Business Regression | 1 | Complete |
-| Total | 181 | Complete |
+| Total | 181 | Design complete |
 
 ## Requirements Traceability
 
@@ -89,7 +102,10 @@ This score means the manual QA scope is fully mapped and documented for the Sure
 
 ## Manual Coverage Notes
 
-- Manual coverage is complete for portfolio/WIP purposes.
+- Manual test design coverage is complete for portfolio/WIP planning purposes.
+- Manual execution is not started and should not be presented as completed testing.
 - Execution is blocked for form-specific cases until `/qa-test-form/` is created.
+- Defect evidence is not available yet because no real bugs have been logged.
+- Screenshot evidence is not available yet because no execution screenshots have been captured.
 - Business integration and payment cases are designed as manual smoke checks unless sandbox credentials are available.
 - Security testing is limited to manual negative testing and does not include penetration testing.
