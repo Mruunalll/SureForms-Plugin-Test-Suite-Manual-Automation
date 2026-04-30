@@ -483,3 +483,8 @@ This project demonstrates:
 - LocalWP testing strategy
 - SureForms Business test planning
 - Honest WIP reporting with clear next steps
+
+## 🔗 See Also
+- [E-Commerce QA Suite](https://github.com/Mruunalll/ecommerce-manual-qa-test-suite)
+- [WordPress Astra QA Suite](https://github.com/Mruunalll/wordpress-astra-qa-test-suite)
+- [AI Application QA Suite](https://github.com/Mruunalll/ai-application-qa-test-suite)
